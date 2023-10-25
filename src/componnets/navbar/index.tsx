@@ -2,13 +2,13 @@ import { Navlinks } from './navlinks';
 
 function Navbar() {
   return (
-    <div className='bg-slate-400 flex py-6 px-40 justify-between'>
+    <div className='fixed top-0 z-50 flex w-full items-center justify-between px-40 py-6  '>
       <div>
-        <span className='font-bold text-2xl cursor-pointer'>Langoy</span>
+        <span className='cursor-pointer text-2xl font-semibold'>Akyat</span>
       </div>
       <ul className='flex space-x-10'>
         {Navlinks.map((item, key) => (
-          <li key={key} className='font-semibold cursor-pointer text-xl capitalize'>
+          <li key={key} className='cursor-pointer text-xl  capitalize'>
             {item.title}
           </li>
         ))}

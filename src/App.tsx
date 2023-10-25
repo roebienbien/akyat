@@ -1,9 +1,12 @@
 import Layout from './componnets/Layout';
+import About from './sections/About';
+import Hero from './sections/Hero';
 
 function App() {
   return (
     <Layout>
-      <h1 className='text-blue-500'>Hero</h1>
+      <Hero />
+      <About />
     </Layout>
   );
 }
