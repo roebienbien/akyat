@@ -9,7 +9,7 @@ function Navbar() {
   };
 
   const [isScrolled, setIsScrolled] = useState(false);
-  const changeNavBackground = (e: any) => {
+  const changeNavBackground = () => {
     window.scrollY >= 1 ? setIsScrolled(true) : setIsScrolled(false);
   };
 
