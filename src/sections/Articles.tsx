@@ -12,7 +12,7 @@ export default function Articles() {
 
   return (
     <section className='mt-40 grid h-[100dvh] grid-cols-1 place-content-center gap-y-10 bg-zinc-200 px-4 xs:px-8 lg:grid-cols-3 lg:gap-x-10'>
-      <div className='lg:col-span-2'>
+      <article className='lg:col-span-2'>
         <div className='h-80 w-auto bg-blue-400 lg:h-[550px]'></div>
         <div className='p-4'>
           <span className='text-4xl font-bold'>This is Title</span>
@@ -22,8 +22,8 @@ export default function Articles() {
             adipisicing elit. Temporibus, est.
           </p>
         </div>
-      </div>
-      <div className='grid gap-y-8'>
+      </article>
+      <article className='grid gap-y-8'>
         {Articles.map((article, key) => (
           <div key={key}>
             <div className='h-48 w-auto bg-amber-400'></div>
@@ -33,7 +33,7 @@ export default function Articles() {
             </div>
           </div>
         ))}
-      </div>
+      </article>
     </section>
   );
 }

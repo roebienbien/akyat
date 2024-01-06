@@ -31,7 +31,8 @@ export default function Perks() {
   return (
     <div className='mt-80 grid h-screen grid-cols-1 place-content-center md:grid-cols-3 md:px-20 lg:px-40'>
       <img
-        src='https://images.unsplash.com/photo-1584223719571-778f3f37aa56?auto=format&fit=crop&q=80&w=2187&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        // src='https://images.unsplash.com/photo-1584223719571-778f3f37aa56?auto=format&fit=crop&q=80&w=2187&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        src='https://images.unsplash.com/photo-1568454537842-d933259bb258?auto=format&fit=crop&q=60&w=700&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aGlrZXJ8ZW58MHwxfDB8fHwy'
         alt='woman-on-beanie'
         className='mx-auto h-[300px]  w-auto place-self-end bg-blue-400 object-cover md:h-[690px]'
       />
