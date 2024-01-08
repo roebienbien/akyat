@@ -9,8 +9,8 @@ function App() {
     <Layout>
       <Hero />
       <About />
-      <Perks />
-      <Articles />
+      {/* <Perks /> */}
+      {/* <Articles /> */}
     </Layout>
   );
 }

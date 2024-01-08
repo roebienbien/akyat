@@ -16,10 +16,6 @@ export default function Hero() {
           {title}
         </h1>
         <div className='mx-auto mt-14 grid justify-items-center px-6 sm:px-20 '>
-          {/* <p className='text-center text-xs sm:text-base lg:text-2xl'>
-            Linear is the better way Lorem, ipsum dolor. Lorem, ipsum. <br className='hidden md:block' /> to build products
-            Lorem ipsum dolor sit amet.
-          </p> */}
           <p className='text-center text-sm font-semibold  lg:text-base'>
             Our clients experience safe and fun journey when climbing.
             <br className='hidden md:block' /> What are you waiting for? The peaks are ready.

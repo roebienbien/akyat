@@ -11,7 +11,7 @@ export default function Articles() {
   ];
 
   return (
-    <section className='mt-40 grid h-[100dvh] grid-cols-1 place-content-center gap-y-10 bg-zinc-200 px-4 xs:px-8 lg:grid-cols-3 lg:gap-x-10'>
+    <section className='mt-40 grid grid-cols-1 place-content-center gap-y-10 bg-zinc-200 px-4 xs:px-8 md:h-[100dvh] lg:grid-cols-3 lg:gap-x-10'>
       <article className='lg:col-span-2'>
         <div className='h-80 w-auto bg-blue-400 lg:h-[550px]'></div>
         <div className='p-4'>
