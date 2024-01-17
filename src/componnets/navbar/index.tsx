@@ -21,12 +21,10 @@ function Navbar() {
   }, []);
 
   return (
-    // <div className='fixed top-0 z-50  flex w-full items-center justify-between px-40 py-6  '>
-    // <div className='fixed top-0 z-50 grid h-20 w-full bg-[#446E7A]   py-4 text-white'>
     <div
       className={`${
         isScrolled ? 'bg-[#446e7a] text-white' : 'bg-transparent text-white'
-      } duration-7000 fixed top-0 z-50 grid h-16 w-full bg-opacity-100 py-2 transition-all  `}>
+      } duration-7000 absolute top-0 z-50 grid h-16 w-full bg-opacity-100 py-2 transition-all  `}>
       <div className='flex items-center justify-between  px-6 xs:px-10 lg:px-20 '>
         <span className='cursor-pointer text-lg  font-semibold lg:text-2xl'>Akyat</span>
         <ul className='hidden space-x-10 md:flex'>

@@ -26,11 +26,11 @@ export default function About() {
     <div className=' mt-10 flex flex-col items-center justify-center sm:px-20 md:flex-row md:px-40 lg:h-[100dvh] lg:px-10 '>
       <div className='px-2 md:mb-0 lg:px-10'>
         <h3 className='text-2xl font-bold lg:text-5xl'>Perks of Exploring with Us.</h3>
-        <div className='mt-8 flex w-full justify-center  px-10 lg:hidden'>
+        <div className='mt-8 flex w-full justify-center  px-8 lg:hidden'>
           <img
             src='https://images.unsplash.com/photo-1584223719571-778f3f37aa56?auto=format&fit=crop&q=80&w=2187&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
             alt='hiker-portrait'
-            className=' h-[400px] w-full  md:h-[600px]'
+            className=' h-[300px] w-full  rounded-lg object-cover object-top shadow-lg'
           />
         </div>
         <ul className='flex flex-col'>
@@ -53,7 +53,7 @@ export default function About() {
         <img
           src='https://images.unsplash.com/photo-1584223719571-778f3f37aa56?auto=format&fit=crop&q=80&w=2187&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
           alt='hiker-portrait'
-          className='  h-[400px] w-full  rounded-lg object-cover shadow-lg md:h-[500px] lg:h-[640px]'
+          className='  h-[200px] w-full  rounded-lg object-cover   md:h-[500px] xl:h-[600px]'
         />
       </div>
     </div>
