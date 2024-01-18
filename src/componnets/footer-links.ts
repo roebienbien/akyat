@@ -1,3 +1,5 @@
+import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa6';
+
 export const QuickLinks = [
   {
     title: 'About Us',
@@ -48,7 +50,22 @@ export const Socials = [
   {
     // ! Add icon properties here
     // icon:
+    icon: FaFacebook,
     title: 'Facebook',
+    src: 'https://example.com',
+  },
+  {
+    // ! Add icon properties here
+    // icon:
+    icon: FaInstagram,
+    title: 'Instagram',
+    src: 'https://example.com',
+  },
+  {
+    // ! Add icon properties here
+    // icon:
+    icon: FaTwitter,
+    title: 'Twitter',
     src: 'https://example.com',
   },
 ];

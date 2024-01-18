@@ -1,13 +1,12 @@
 import React from 'react';
 import roebienLogo from '../assets/roebien-logo.svg';
-// import footerBgImg from 'https://images.pexels.com/photos/3063478/pexels-photo-3063478.jpeg';
 import { QuickLinks, Legals, Socials } from '../componnets/footer-links';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className='relative mt-20    '>
+    <footer className='relative mt-20  bg-zinc-50  '>
       <div className=' relative bg-black  '>
         <img
           // src='https://images.pexels.com/photos/3063478/pexels-photo-3063478.jpeg'
@@ -19,12 +18,13 @@ export default function Footer() {
           We would be delighted to assist you in having the trip of a lifetime.
         </span>
       </div>
-      <div className='flex h-96 justify-between  px-36 py-8'>
-        <div className='text-left lg:max-w-xl'>
+      <div className='flex h-96 justify-between px-36 py-8'>
+        <div className='text-left lg:max-w-lg'>
           <h3 className='  text-5xl font-bold'>Akyat</h3>
           <p className='mt-2 text-justify text-lg leading-loose '>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima repudiandae dolore culpa consequuntur
-            dignissimos ratione. Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, deserunt?{' '}
+            Whether you are from overseas or local, we can help you explore the 3142 summits of the Philippines.{' '}
+            <br className='hidden md:block' />
+            Akyat is your bridge that connects Lorem ipsum dolor sit amet.
           </p>
         </div>
         <div className='flex space-x-14  '>
@@ -32,28 +32,29 @@ export default function Footer() {
             <span className=' text-2xl font-bold'>Quick Links</span>
             <ul className='mt-4 space-y-4'>
               {QuickLinks.map((quickLinks, key) => (
-                <li key={key} className='font-semibold '>
+                <li key={key} className='cursor-pointer text-sm font-semibold '>
                   {quickLinks.title}
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <span className=' text-2xl font-bold'>Legals</span>
+            <span className='text-2xl font-bold'>Legals</span>
             <ul className='mt-4 space-y-4'>
               {Legals.map((legals, key) => (
-                <li key={key} className='font-semibold '>
+                <li key={key} className='cursor-pointer text-sm font-semibold '>
                   {legals.title}
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <span className=' text-2xl font-bold'>Socials</span>
+            <span className='text-2xl font-bold'>Socials</span>
             <ul className='mt-4 space-y-4'>
               {Socials.map((social, key) => (
-                <li key={key} className='font-semibold '>
-                  {social.title}
+                <li key={key} className='flex cursor-pointer items-center space-x-1 text-sm font-semibold '>
+                  <social.icon className='text-base' />
+                  <span>{social.title}</span>
                 </li>
               ))}
             </ul>
