@@ -32,7 +32,7 @@ export default function Footer() {
             <span className=' text-2xl font-bold'>Quick Links</span>
             <ul className='mt-4 space-y-4'>
               {QuickLinks.map((quickLinks, key) => (
-                <li key={key} className='cursor-pointer text-sm font-semibold '>
+                <li key={key} className='cursor-pointer text-sm  '>
                   {quickLinks.title}
                 </li>
               ))}
@@ -42,7 +42,7 @@ export default function Footer() {
             <span className='text-2xl font-bold'>Legals</span>
             <ul className='mt-4 space-y-4'>
               {Legals.map((legals, key) => (
-                <li key={key} className='cursor-pointer text-sm font-semibold '>
+                <li key={key} className='cursor-pointer text-sm  '>
                   {legals.title}
                 </li>
               ))}
@@ -52,7 +52,7 @@ export default function Footer() {
             <span className='text-2xl font-bold'>Socials</span>
             <ul className='mt-4 space-y-4'>
               {Socials.map((social, key) => (
-                <li key={key} className='flex cursor-pointer items-center space-x-1 text-sm font-semibold '>
+                <li key={key} className='flex cursor-pointer items-center space-x-1 text-sm  '>
                   <social.icon className='text-base' />
                   <span>{social.title}</span>
                 </li>
