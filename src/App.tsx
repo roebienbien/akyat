@@ -15,8 +15,6 @@ function App() {
       <Mountains />
       <AppPromotion />
       <Testimonials />
-      {/* <Perks /> */}
-      {/* <Articles /> */}
     </Layout>
   );
 }
