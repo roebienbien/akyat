@@ -18,7 +18,7 @@ export default function AppPromotion() {
             <AppleStoreButton link={'https://example.com'} />
           </div>
         </div>
-        <div>This is image</div>
+        <img src='' alt='cellphone-image' />
       </div>
     </section>
   );

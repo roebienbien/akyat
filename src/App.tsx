@@ -5,12 +5,14 @@ import Hero from './sections/Hero';
 import Perks from './sections/Perks';
 import Testimonials from './sections/Testimonials';
 import AppPromotion from './sections/app-promotion/AppPromotion';
+import Mountains from './sections/mountains/Mountains';
 
 function App() {
   return (
     <Layout>
       <Hero />
       <About />
+      <Mountains />
       <AppPromotion />
       <Testimonials />
       {/* <Perks /> */}
