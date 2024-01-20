@@ -13,19 +13,18 @@ export default function Footer() {
         <img
           src={footerImg}
           alt='six-people-mountain'
-          className=' h-[400px] w-full object-cover object-bottom opacity-40 '
+          className=' h-[200px] w-full object-cover object-bottom opacity-40 md:h-[400px] '
         />
         <h3 className='absolute left-1/2 top-1/2 w-full -translate-x-1/2  -translate-y-1/2 text-center  font-semibold text-white sm:text-2xl  md:px-10 md:text-4xl lg:text-5xl   xl:px-20   '>
           We would be delighted to assist you in having the trip of a lifetime.
         </h3>
       </div>
-      <div className=' mt-6 flex flex-col px-2  py-8 sm:px-10 md:my-8 md:px-20 lg:flex-row lg:justify-between lg:space-x-20'>
+      <div className='  flex flex-col px-2  py-8 xs:px-4 sm:px-10 md:my-8 md:px-20 lg:flex-row lg:justify-between lg:space-x-20'>
         <div className='text-left lg:max-w-lg'>
           <h3 className='text-2xl  font-bold md:text-5xl'>Akyat</h3>
           <p className='mt-2 text-justify text-sm lg:text-base '>
-            Whether you are from overseas or local, we can help you explore the 3142 summits of the Philippines.
-            <br className='hidden md:block' />
-            Akyat is your bridge that connects Lorem ipsum dolor sit amet.
+            Whether you are from overseas or local, we can help you explore the 3142 summits of the Philippines. Akyat is
+            your bridge that connects Lorem ipsum dolor sit amet.
           </p>
         </div>
         <div className='mt-8 flex space-x-14  '>

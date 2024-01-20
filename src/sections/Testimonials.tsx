@@ -38,32 +38,33 @@ const Client: TClient[] = [
     testimony: `The hills were a challenge, but Akyat's ease and beauty discovered made it worthwhile. Akyat's fellowship turned the hike into an unforgettable escapade, rich with unique contributions from each of us.`,
   },
 ];
+// Explore transformative experiences with Akyat—seamless bookings, breathtaking landscapes. Discover firsthand the
+// essence of unforgettable journeys from our community. Read on to discover the stories that showcase the true
+// essence of Akyat's impact on hiking adventures.
 
 export default function Testimonials() {
   return (
-    <section className='flex  flex-col space-y-10  px-10'>
+    <section className='flex  flex-col space-y-10 px-4 py-20  lg:px-10'>
       <div className=''>
-        <h2 className='text-7xl font-bold'>Testimony</h2>
-        <p className='mt-4'>
-          Explore transformative experiences with Akyat—seamless bookings, breathtaking landscapes. Discover firsthand the
-          essence of unforgettable journeys from our community. Read on to discover the stories that showcase the true
-          essence of Akyat's impact on hiking adventures.
+        <h2 className='text-4xl font-bold lg:text-7xl'>Testimony</h2>
+        <p className='mt-4  text-justify text-sm lg:text-base'>
+          Discover firsthand the essence of unforgettable journeys from our community.{' '}
         </p>
       </div>
-      <ul className='grid grid-cols-2  gap-10  '>
+      <ul className='grid gap-10  lg:grid-cols-2  '>
         {Client.map((client, key) => (
           <li
             key={key}
-            className='relative flex flex-col justify-between space-y-4  rounded-md   bg-white   px-12 py-8 shadow-md'>
-            <p className='text-lg first-letter:text-3xl first-letter:font-bold'>{client.testimony}</p>
+            className='relative flex flex-col justify-between space-y-4  rounded-md bg-white   px-4   py-8 shadow-md lg:px-12'>
+            <p className='text-xs first-letter:text-xl first-letter:font-bold md:text-lg'>{client.testimony}</p>
             <div className='flex items-center space-x-4'>
-              <img src={client.img} alt='client-photo' className=' rounded-full object-cover  lg:h-20 lg:w-20   ' />
+              <img src={client.img} alt='client-photo' className=' h-10 w-10 rounded-full object-cover lg:h-20 lg:w-20   ' />
               <div className='flex flex-col   '>
-                <h4 className='text-xl font-semibold'>{client.name}</h4>
-                <span className='text-gray-500'>{client.place}</span>
+                <h4 className='text-sm  lg:text-xl'>{client.name}</h4>
+                <span className='text-[10px] text-gray-500'>{client.place}</span>
               </div>
             </div>
-            <FaQuoteRight className='absolute bottom-10 right-10 fill-gray-700 text-6xl' />
+            <FaQuoteRight className='absolute bottom-10 right-10 fill-gray-700 text-lg lg:text-6xl' />
           </li>
         ))}
       </ul>
