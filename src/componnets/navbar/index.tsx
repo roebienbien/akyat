@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import HamburgerButton from './HamburgerButton';
+import HamburgerButton from '../ui/HamburgerButton';
 import { Navlinks } from './navlinks';
 
 function Navbar() {
