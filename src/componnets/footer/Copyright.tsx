@@ -1,4 +1,3 @@
-import React from 'react';
 import roebienLogo from '../../assets/roebien-logo.svg';
 
 export default function Copyright() {
@@ -6,7 +5,6 @@ export default function Copyright() {
   return (
     <div className=' flex w-full justify-between  border-t-2 border-gray-400 bg-zinc-100 px-4  py-4  lg:px-40'>
       <p className='text-xs  md:text-base'>
-        {' '}
         {`Copyright © ${currentYear}`} <span className='hidden md:inline'> Akyat(PHL) | All Right Reserved </span>
       </p>
       <div className='flex items-center space-x-2'>

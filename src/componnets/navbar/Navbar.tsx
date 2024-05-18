@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import HamburgerButton from '../ui/HamburgerButton';
 import { Navlinks } from './navlinks';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,6 +9,7 @@ function Navbar() {
     setIsOpen((prevState) => !prevState);
   };
 
+  // Change navbarColorOnScroll function
   const [isScrolled, setIsScrolled] = useState(false);
   const changeNavBackground = () => {
     window.scrollY >= 1 ? setIsScrolled(true) : setIsScrolled(false);
@@ -23,20 +25,20 @@ function Navbar() {
   return (
     <div
       className={`${
-        isScrolled ? 'bg-[#446e7a] text-white' : 'bg-transparent text-white'
-      } duration-7000 absolute top-0 z-50 grid h-16 w-full bg-opacity-100 py-2 transition-all  `}>
+        isScrolled && 'bg-gray-50 text-black'
+      } duration-7000 fixed top-0 z-50 grid h-16 w-full  bg-opacity-100 py-2 text-black transition-all  `}>
       <div className='flex items-center justify-between  px-6 xs:px-10 lg:px-20 '>
-        <span className='cursor-pointer text-lg  font-semibold lg:text-2xl'>Akyat</span>
+        <span className='cursor-pointer text-lg font-bold  lg:text-3xl'>Akyat</span>
         <ul className='hidden space-x-10 md:flex'>
           {Navlinks.map((item, key) => (
             <li
               key={key}
-              className='cursor-pointer border-b-2 border-transparent capitalize text-gray-300 hover:border-white hover:text-white      lg:text-xl'>
-              {item.title}
+              className='cursor-pointer  border-b-2 border-transparent capitalize  hover:border-black  lg:text-xl'>
+              <a href={item.src}>{item.title}</a>
             </li>
           ))}
         </ul>
-        <button className='hidden border   px-8 py-2  md:block lg:text-lg'>Login</button>
+        <button className={`hidden border  border-black px-8 py-2  md:block lg:text-lg`}>Login</button>
         <HamburgerButton isOpen={isOpen} toggleMenu={toggleMenu} />
       </div>
     </div>
@@ -44,4 +46,3 @@ function Navbar() {
 }
 
 export default Navbar;
-// #446E7A

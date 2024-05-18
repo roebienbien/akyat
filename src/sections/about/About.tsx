@@ -6,7 +6,9 @@ import PerksCard from './PerksCard';
 
 export default function About() {
   return (
-    <div className=' mt-10 flex flex-col items-center justify-center sm:px-20 md:flex-row md:px-40 lg:h-[100dvh] lg:px-10 xl:px-20 '>
+    <div
+      id='about'
+      className=' mt-10 flex flex-col items-center justify-center sm:px-20 md:flex-row md:px-40 lg:h-[100dvh] lg:px-10 xl:px-20 '>
       <div className='px-2 md:mb-0 lg:px-10'>
         <h3 className='text-2xl font-bold lg:text-5xl'>Perks of Exploring with Us.</h3>
         <div className='mt-8 flex w-full justify-center  px-8 lg:hidden'>

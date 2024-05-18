@@ -5,13 +5,16 @@ import Hero from './sections/Hero';
 import Testimonials from './sections/testimonials/Testimonials';
 import AppPromotion from './sections/app-promotion/AppPromotion';
 import Mountains from './sections/mountains/Mountains';
+import { BrowserRouter, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <Layout>
+      {/* <Routes> */}
       <Hero />
+      {/* <Hero1 /> */}
       <About />
-      <Mountains />
+      {/* <Mountains /> */}
       <AppPromotion />
       <Testimonials />
     </Layout>
