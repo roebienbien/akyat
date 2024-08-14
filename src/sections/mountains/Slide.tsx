@@ -1,5 +1,3 @@
-import React from 'react';
-
 export type TSlide = {
   url: string;
   title: string;
@@ -8,7 +6,7 @@ export type TSlide = {
   tags?: string[];
 };
 
-export default function Slide({ url, title, location, price, tags }: TSlide) {
+export default function Slide({ url, title, location, price }: TSlide) {
   return (
     <div className='flex justify-center space-x-4'>
       <div>
