@@ -1,7 +1,7 @@
-import React from 'react';
+import Accordion from '../ui/Accordion';
+import Copyright from './Copyright';
 import { FooterLinksList } from './footer-links';
 import FooterLinks from './FooterLinks';
-import Copyright from './Copyright';
 
 export default function Footer() {
   const footerImg =
@@ -27,7 +27,13 @@ export default function Footer() {
             your bridge that connects Lorem ipsum dolor sit amet.
           </p>
         </div>
-        <div className='mt-8 flex space-x-14  '>
+        <div className='mt-10'>
+          {/* <Accordion FooterLinks /> */}
+          {FooterLinksList.map((item, index) => (
+            <Accordion key={index} {...item} />
+          ))}
+        </div>
+        <div className='mt-8 hidden space-x-14 lg:flex  '>
           {FooterLinksList.map((items, key) => (
             <FooterLinks key={key} {...items} />
           ))}
