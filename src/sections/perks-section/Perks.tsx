@@ -1,14 +1,11 @@
-import { FaLeaf } from 'react-icons/fa6';
-import { RiUserHeartLine } from 'react-icons/ri';
-import { FaBookOpen } from 'react-icons/fa';
-import { PerksList } from './perks';
+import { PerksList } from './perks-list';
 import PerksCard from './PerksCard';
 
-export default function About() {
+export default function Perks() {
   return (
     <div
       id='about'
-      className=' mt-10 flex flex-col items-center justify-center sm:px-20 md:flex-row md:px-40 lg:h-[100dvh] lg:px-10 xl:px-20 '>
+      className=' my-20 flex flex-col items-center justify-center sm:px-20 md:flex-row md:px-40 lg:min-h-[100dvh] lg:px-10 xl:px-20 '>
       <div className='px-2 md:mb-0 lg:px-10'>
         <h2 className='text-3xl font-bold lg:text-5xl'>Perks of Exploring with Us.</h2>
         <div className='mt-8 flex w-full justify-center  px-8 lg:hidden'>

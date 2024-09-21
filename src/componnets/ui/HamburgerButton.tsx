@@ -1,28 +1,25 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-type Props = {
-  isOpen: boolean;
-  toggleMenu: () => void;
-};
+// type Props = {
+//   isOpen: boolean;
+//   toggleMenu: () => void;
+// };
 
-const HamburgerButton: React.FC<Props> = ({ isOpen, toggleMenu }) => {
-  // const [isOpen, setIsOpen] = useState(false);
-  const initialHamburgerLine = `h-1 w-6 rounded-full bg-cyan-500 transition ease transform duration-300`;
+// const HamburgerButton: React.FC<Props> = () => {
+const HamburgerButton = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const initialHamburgerLine = `h-1 w-6 rounded-full bg-black transition ease transform duration-300`;
   const openHamburger = 'translate-y-2 rotate-45 opacity-50 group-hover:opacity-100';
   const closeHamburger = 'opacity-50 group-hover:opacity-100';
 
   return (
-    <button onClick={toggleMenu} className='group flex flex-col gap-y-1 md:hidden '>
+    <button onClick={() => setIsMenuOpen((prevState) => !prevState)} className='group flex flex-col gap-y-1 md:hidden '>
+      <div className={`${initialHamburgerLine} ${isMenuOpen ? openHamburger : closeHamburger}`} />
+      <div className={`${initialHamburgerLine} ${isMenuOpen ? 'opacity-0' : 'opacity-50 group-hover:opacity-100'}`} />
       <div
         className={`${initialHamburgerLine} ${
-          // isOpen ? 'translate-y-2 rotate-45 opacity-50 group-hover:opacity-100' : 'opacity-50 group-hover:opacity-100'
-          isOpen ? openHamburger : closeHamburger
-        }`}
-      />
-      <div className={`${initialHamburgerLine} ${isOpen ? 'opacity-0' : 'opacity-50 group-hover:opacity-100'}`} />
-      <div
-        className={`${initialHamburgerLine} ${
-          isOpen ? '-translate-y-2 -rotate-45 opacity-50 group-hover:opacity-100' : 'opacity-50 group-hover:opacity-100'
+          isMenuOpen ? '-translate-y-2 -rotate-45 opacity-50 group-hover:opacity-100' : 'opacity-50 group-hover:opacity-100'
         }`}
       />
     </button>

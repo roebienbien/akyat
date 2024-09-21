@@ -3,10 +3,10 @@ import HamburgerButton from '../ui/HamburgerButton';
 import { Navlinks } from './navlinks';
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = () => {
-    setIsOpen((prevState) => !prevState);
-  };
+  // const [isOpen, setIsOpen] = useState(false);
+  // const toggleMenu = () => {
+  //   setIsOpen((prevState) => !prevState);
+  // };
 
   // Change navbarColorOnScroll function
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,7 +38,8 @@ function Navbar() {
           ))}
         </ul>
         <button className={`hidden border  border-black px-8 py-2  md:block lg:text-lg`}>Login</button>
-        <HamburgerButton isOpen={isOpen} toggleMenu={toggleMenu} />
+        {/* <HamburgerButton isOpen={isOpen} toggleMenu={toggleMenu} /> */}
+        <HamburgerButton />
       </div>
     </div>
   );

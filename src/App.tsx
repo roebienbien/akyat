@@ -1,19 +1,22 @@
 import Layout from './componnets/Layout';
-import About from './sections/about/About';
+import Perks from './sections/perks-section/Perks';
 import Articles from './sections/Articles';
 import Hero from './sections/Hero';
 import Testimonials from './sections/testimonials/Testimonials';
 import AppPromotion from './sections/app-promotion/AppPromotion';
 import Mountains from './sections/mountains/Mountains';
 import { BrowserRouter, Routes } from 'react-router-dom';
+import Services from './sections/services-section/Services';
+import Form from './componnets/ui/Form';
 
 function App() {
   return (
     <Layout>
       {/* <Routes> */}
       <Hero />
-      {/* <Hero1 /> */}
-      <About />
+      <Perks />
+      <Form />
+      <Services />
       {/* <Mountains /> */}
       <AppPromotion />
       <Testimonials />

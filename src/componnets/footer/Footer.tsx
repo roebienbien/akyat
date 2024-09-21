@@ -8,7 +8,7 @@ export default function Footer() {
     'https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 
   return (
-    <footer className=' min-h-[100dvh]'>
+    <footer className='lg:min-h-screen'>
       <div className='relative bg-black  '>
         <img
           src={footerImg}
@@ -27,12 +27,15 @@ export default function Footer() {
             your bridge that connects Lorem ipsum dolor sit amet.
           </p>
         </div>
-        <div className='mt-10'>
+        {/* Mobile FooterLinks */}
+        <div className=':hidden mt-10'>
           {/* <Accordion FooterLinks /> */}
           {FooterLinksList.map((item, index) => (
             <Accordion key={index} {...item} />
           ))}
         </div>
+
+        {/* Large Devices FooterLinks */}
         <div className='mt-8 hidden space-x-14 lg:flex  '>
           {FooterLinksList.map((items, key) => (
             <FooterLinks key={key} {...items} />

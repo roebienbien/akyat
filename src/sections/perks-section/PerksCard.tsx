@@ -1,5 +1,5 @@
 import React from 'react';
-import { TPerks } from './perks';
+import { TPerks } from './perks-list';
 
 export default function PerksCard({ icon: Icon, perk, description }: TPerks) {
   return (

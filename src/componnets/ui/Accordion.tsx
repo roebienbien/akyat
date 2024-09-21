@@ -7,8 +7,8 @@ export default function Accordion({ title, links }: IFooterLinks) {
 
   return (
     <div className=''>
-      <button onClick={() => setAccordionOpen(!accordionOpen)} className='flex w-full items-center justify-between text-sm '>
-        <span className='text-2xl'>{title}</span>
+      <button onClick={() => setAccordionOpen(!accordionOpen)} className='flex w-full items-center justify-between text-xs '>
+        <span className='text-xl'>{title}</span>
         {accordionOpen ? <FaMinus /> : <FaPlus />}
       </button>
       <div
