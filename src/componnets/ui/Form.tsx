@@ -98,26 +98,27 @@ export default function AkyatForm() {
   };
 
   return (
-    <div className='flex  h-screen items-center justify-center bg-gray-200 px-4  text-black'>
-      <div className='w-[300px] bg-gray-300 py-2 lg:min-w-[1200px]'>
-        <h2 className='text-center text-2xl font-semibold lg:text-4xl'>Book My Hike</h2>
+    <div className='flex h-screen items-center justify-center bg-gray-50   text-black'>
+      <div className='grid w-[300px] gap-y-10 bg-gray-100 lg:min-w-[1200px] lg:px-20'>
+        <h2 className='py-8 text-center text-2xl font-semibold lg:text-4xl'>Book My Hike</h2>
         {/* navigation breadcrumbs */}
         <div className='mt-4 flex  justify-center space-x-10 px-4 lg:px-10  '>
           {Steps.map((step, index) => (
             <li key={index} className='h-20 w-full list-none   text-lg  '>
               {currentStep > index ? (
-                <div className='flex  w-full flex-col items-center  border-b-4 border-blue-400 pb-2  text-blue-400'>
+                <div className='flex  w-full items-center justify-center gap-x-4  border-b-4 border-blue-400 pb-2  '>
                   <step.icon className='text-black' />
+                  {/* <span>{step.id}</span> */}
                   <span className='hidden text-lg lg:flex'>{step.title}</span>
                 </div>
               ) : currentStep === index ? (
-                <div className='flex w-full flex-col items-center border-b-4 border-blue-400  pb-2 text-blue-400'>
+                <div className='flex w-full items-center justify-center gap-x-4 border-b-4 border-blue-400  pb-2 '>
                   <step.icon className='text-black' />
                   <span className='hidden text-lg lg:flex'>{step.title}</span>
                 </div>
               ) : (
                 currentStep <= index && (
-                  <div className='flex w-full flex-col items-center border-b-4 border-gray-900 pb-2 text-gray-900'>
+                  <div className='flex w-full items-center justify-center gap-x-4 border-b-4 border-gray-200 pb-2 text-gray-900'>
                     <step.icon className='text-black' />
                     <span className='hidden text-lg lg:inline'>{step.title}</span>
                   </div>

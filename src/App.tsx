@@ -4,10 +4,10 @@ import Articles from './sections/Articles';
 import Hero from './sections/Hero';
 import Testimonials from './sections/testimonials/Testimonials';
 import AppPromotion from './sections/app-promotion/AppPromotion';
-import Mountains from './sections/mountains/Mountains';
 import { BrowserRouter, Routes } from 'react-router-dom';
 import Services from './sections/services-section/Services';
 import Form from './componnets/ui/Form';
+import Mountains from './sections/mountains-section/Mountains';
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
       <Perks />
       <Form />
       <Services />
-      {/* <Mountains /> */}
+      <Mountains />
       <AppPromotion />
       <Testimonials />
     </Layout>

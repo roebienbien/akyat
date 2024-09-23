@@ -8,11 +8,15 @@ export const Navlinks = [
     src: '#explore',
   },
   {
-    title: 'about us',
+    title: 'trails',
     src: '#about',
   },
   {
-    title: 'contact',
-    src: '#contact',
+    title: 'Blogs',
+    src: '#blog',
+  },
+  {
+    title: 'Pricing',
+    src: '#pricing',
   },
 ];
