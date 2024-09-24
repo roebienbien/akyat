@@ -1,4 +1,10 @@
-interface IMountainList {
+import mountUlap from '../../assets/mountains/mount-ulap.jpg';
+import mountPulag from '../../assets/mountains/mount-pulag.jpg';
+import spartanTrail from '../../assets/mountains/spartan-trail.jpg';
+import mountBatulao from '../../assets/mountains/mount-batulao.jpg';
+import mountPinatubo from '../../assets/mountains/mount-pinatubo.jpg';
+
+export interface IMountainList {
   name: string;
   previewSrc: string;
   location: string;
@@ -16,7 +22,7 @@ interface IMountainList {
 const MountainList: IMountainList[] = [
   {
     name: 'Spartan Trail',
-    previewSrc: 'image',
+    previewSrc: spartanTrail,
     location: 'Buhisan Watershed Forest Reserved',
     elevation: '587m',
     duration: '2h 2m',
@@ -28,50 +34,50 @@ const MountainList: IMountainList[] = [
   },
   {
     name: 'Mount Pulag',
-    previewSrc: '',
+    previewSrc: mountPulag,
     location: 'Grand Cordillera Central',
-    elevation: '',
+    elevation: '2922m',
     duration: '5h 9m',
     length: '14.5km',
     route: 'Out & back',
     difficulty: 'easy',
-    rating: '',
+    rating: '3.9',
     description: '',
   },
   {
     name: 'Mount Batulao',
-    previewSrc: '',
+    previewSrc: mountBatulao,
     location: 'Nasugbo, Batangas',
     elevation: '811',
     duration: '5h 9m',
     length: '10.3km',
     route: 'Out & Back',
     difficulty: 'easy',
-    rating: '',
+    rating: '3.7',
     description: '',
   },
   {
-    name: 'Mount ulap',
-    previewSrc: '',
+    name: 'Mount Ulap',
+    previewSrc: mountUlap,
     location: 'Itogon, Benguet',
     elevation: '488m',
     duration: '3h 31m',
     length: '7.9km',
     route: 'Point to Point',
     difficulty: 'easy',
-    rating: '',
+    rating: '4.2',
     description: '',
   },
   {
     name: 'Mount Pinatubo',
-    previewSrc: '',
+    previewSrc: mountPinatubo,
     location: 'Subic, Zambales',
-    elevation: '',
+    elevation: '1486',
     duration: '4h 1m',
     length: '11.1km',
     route: 'Out & Back',
     difficulty: 'easy',
-    rating: '',
+    rating: '4.5',
     description: '',
   },
   // {
