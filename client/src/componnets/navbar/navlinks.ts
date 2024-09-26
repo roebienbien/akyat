@@ -9,7 +9,7 @@ export const Navlinks = [
   },
   {
     title: 'trails',
-    src: '#about',
+    src: '#trails',
   },
   {
     title: 'Blogs',

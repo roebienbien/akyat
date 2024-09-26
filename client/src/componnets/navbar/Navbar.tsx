@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
+import akyatLogo from '../../assets/akyat-logo.svg';
 import HamburgerButton from '../ui/HamburgerButton';
 import { Navlinks } from './navlinks';
-import akyatLogo from '../../assets/akyat-logo.svg';
 
 function Navbar() {
   // const [isOpen, setIsOpen] = useState(false);
