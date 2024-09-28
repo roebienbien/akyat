@@ -1,12 +1,11 @@
 import { Router } from 'express';
-import express from 'express';
 import user from './user-routes';
 
-const router = express();
+const router = Router();
 
-// router.get('/healthCheck', (_, res) => {
-//   return res.sendStatus(200);
-// });
+router.get('/healthCheck', (_, res) => {
+  return res.sendStatus(200);
+});
 
 router.use('/users', user);
 
