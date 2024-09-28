@@ -38,6 +38,7 @@ export const MountainCard = ({ name, previewSrc, location, elevation, duration, 
           </span>
         </div>
         <p className='col-span-2 lg:col-span-3'>
+          {description}
           Description: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur quisquam asperiores voluptates. Consequatur itaque eveniet iusto nisi amet voluptatem
           animi.
         </p>
