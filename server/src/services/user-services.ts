@@ -9,13 +9,17 @@ export const deleteUserById = (_id: string) => {
   return UserModel.findOneAndDelete({ _id });
 };
 
-export const updateUserById = (id: string, body: object) => {
-  return UserModel.findByIdAndUpdate(id, body, { new: true });
+export const updateUserById = (_id: string, body: object) => {
+  return UserModel.findByIdAndUpdate(_id, body, { new: true });
 };
 
-export const findUserById = (id: string) => {
+export const findUserById = (_id: string) => {
   // return UserModel.findById({ _id: id });
-  return UserModel.findById(id);
+  return UserModel.findById(_id);
+};
+
+export const findUserByEmail = (email: string) => {
+  return UserModel.findOne({ email });
 };
 
 export const findAllUsers = () => {

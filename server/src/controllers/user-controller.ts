@@ -1,10 +1,16 @@
 import { Request, Response } from 'express';
 import { CreateUserInput } from '../schema/user-schema';
-import { createUser, deleteUserById, findAllUsers, findUserById, updateUserById } from '../services/user-services';
-import { UserModel } from '../models/user-model';
+import { createUser, deleteUserById, findAllUsers, findUserByEmail, findUserById, updateUserById } from '../services/user-services';
 
 export const registerUser = async (req: Request<{}, {}, CreateUserInput>, res: Response) => {
   try {
+    // check if email already exist
+    const { email } = req.body;
+    // const isEmailTaken = await findUserByEmail(email);
+    // if (isEmailTaken) {
+    //   return res.status(403).json({ message: 'email already used' });
+    // }
+    // return omit(user.toJSON(), "password");
     const user = await createUser(req.body);
 
     return res.status(200).json(user);
@@ -44,15 +50,17 @@ export const getUser = async (req: Request, res: Response) => {
 
     return res.status(200).json(user);
   } catch (error) {
-    return res.status(204).send(error);
+    return res.status(400).send(error);
   }
 };
 
 export const getAllUsers = async (_: Request, res: Response) => {
   try {
-    const allStudent = await findAllUsers();
+    const allUsers = await findAllUsers();
 
-    return res.status(200).json(allStudent);
+    if (!allUsers) return res.status(404).json({ message: 'no uses found' });
+
+    return res.status(200).json(allUsers);
   } catch (error) {
     return res.status(400).send(error);
   }
