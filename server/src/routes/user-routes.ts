@@ -1,4 +1,3 @@
-import { Router } from 'express';
 import { deleteUser, getAllUsers, getUser, registerUser, updateUser } from '../controllers/user-controller';
 import validateResource from '../middleware/validate-resource';
 import { createUserSchema } from '../schema/user-schema';

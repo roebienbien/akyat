@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import akyatLogo from '../../assets/akyat-logo.svg';
 import HamburgerButton from '../ui/HamburgerButton';
 import { Navlinks } from './navlinks';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   // const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +34,9 @@ function Navbar() {
               <a href={item.src}>{item.title}</a>
             </li>
           ))}
-          <button className={`hidden  bg-green-600  px-8 py-2 text-white hover:bg-green-700 md:block lg:text-lg`}>Get Started</button>
+          <Link to={'/login'} className={`hidden  bg-green-600  px-8 py-2 text-white hover:bg-green-700 md:block lg:text-lg`}>
+            Login
+          </Link>
           {/* <button className={`hidden border border-black px-8 py-2  md:block lg:text-lg`}>Login</button> */}
         </ul>
         {/* <HamburgerButton isOpen={isOpen} toggleMenu={toggleMenu} /> */}

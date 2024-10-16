@@ -1,27 +1,39 @@
-import Layout from './componnets/Layout';
-import Perks from './sections/perks-section/Perks';
-import Articles from './sections/Articles';
-import Hero from './sections/Hero';
-import Testimonials from './sections/testimonials/Testimonials';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Layout from './components/Layout';
+import Form from './components/ui/Form';
 import AppPromotion from './sections/app-promotion/AppPromotion';
-import { BrowserRouter, Routes } from 'react-router-dom';
-import Services from './sections/services-section/Services';
-import Form from './componnets/ui/Form';
+import Hero from './sections/Hero';
 import Mountains from './sections/mountains-section/Mountains';
+import Perks from './sections/perks-section/Perks';
+import Services from './sections/services-section/Services';
+import Testimonials from './sections/testimonials/Testimonials';
+import NotFoundPage from './pages/NotFoundPage';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    errorElement: <NotFoundPage />,
+    element: (
+      <Layout>
+        <Hero />
+        <Perks />
+        <Form />
+        <Services />
+        <Mountains />
+        <AppPromotion />
+        <Testimonials />
+      </Layout>
+    ),
+  },
+
+  {
+    path: '/login',
+    element: <Form />,
+  },
+]);
 
 function App() {
-  return (
-    <Layout>
-      {/* <Routes> */}
-      <Hero />
-      <Perks />
-      <Form />
-      <Services />
-      <Mountains />
-      <AppPromotion />
-      <Testimonials />
-    </Layout>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

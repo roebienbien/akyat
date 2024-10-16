@@ -2,7 +2,7 @@ import { IMountainList } from './mountain-list';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import { FaGaugeHigh, FaMountain, FaRegBookmark, FaRegClock, FaRoute, FaRulerHorizontal, FaStar } from 'react-icons/fa6';
 
-import PrimaryButton from '../../componnets/ui/buttons/PrimaryButton';
+import PrimaryButton from '../../components/ui/buttons/PrimaryButton';
 export const MountainCard = ({ name, previewSrc, location, elevation, duration, length, route, difficulty, rating, description }: IMountainList) => {
   return (
     <div className='relative mx-auto flex flex-col  bg-gray-100 shadow-lg lg:w-[600px]'>
