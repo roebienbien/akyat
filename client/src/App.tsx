@@ -1,6 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './components/Layout';
-import Form from './components/ui/Form';
 import AppPromotion from './sections/app-promotion/AppPromotion';
 import Hero from './sections/Hero';
 import Mountains from './sections/mountains-section/Mountains';
@@ -8,6 +7,8 @@ import Perks from './sections/perks-section/Perks';
 import Services from './sections/services-section/Services';
 import Testimonials from './sections/testimonials/Testimonials';
 import NotFoundPage from './pages/NotFoundPage';
+import LoginForm from './components/ui/forms/LoginForm';
+import Form from './components/ui/forms/Form';
 
 const router = createBrowserRouter([
   {
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
       <Layout>
         <Hero />
         <Perks />
-        <Form />
+        {/* <Form /> */}
         <Services />
         <Mountains />
         <AppPromotion />
@@ -25,9 +26,12 @@ const router = createBrowserRouter([
       </Layout>
     ),
   },
-
   {
     path: '/login',
+    element: <LoginForm />,
+  },
+  {
+    path: '/register',
     element: <Form />,
   },
 ]);

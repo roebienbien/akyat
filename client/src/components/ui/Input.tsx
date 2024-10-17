@@ -1,20 +1,21 @@
 import { FieldError } from 'react-hook-form';
+import { twMerge } from 'tailwind-merge';
 
 interface IProps {
   className?: string;
   id: string;
   placeholder: string;
-  text: string;
+  text?: string;
   type?: string;
   register: any;
   errors: FieldError | undefined;
 }
 
-const Input = ({ id, placeholder, text, type, register, errors }: IProps) => {
+const Input = ({ id, placeholder, text, type, register, errors, className }: IProps) => {
   return (
     <div className={'flex w-full flex-col  text-xs'}>
       <span className='pb-2 capitalize'>{text}</span>
-      <input {...register(id)} id={id} type={type || ''} placeholder={placeholder} className='p-2 shadow-md' />
+      <input {...register(id)} id={id} type={type || ''} placeholder={placeholder} className={twMerge('p-2 shadow-md', className)} />
       {errors && <span className='text-[8px] text-red-500'>{errors.message}</span>}
     </div>
   );

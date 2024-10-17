@@ -6,10 +6,10 @@ import { useState } from 'react';
 import { FaUser, FaHouse, FaCreditCard } from 'react-icons/fa6';
 import { IconType } from 'react-icons';
 import { AiOutlineUser } from 'react-icons/ai';
-import PrimaryButton from './buttons/PrimaryButton';
-import SecondaryButton from './buttons/SecondaryButton';
-import { Schema } from '../../schema/form-schema';
-import Input from './Input';
+import PrimaryButton from '../buttons/PrimaryButton';
+import SecondaryButton from '../buttons/SecondaryButton';
+import Input from '../Input';
+import { Schema } from '../../../schema/form-schema';
 
 interface IStep {
   id: string;
