@@ -9,6 +9,7 @@ import Testimonials from './sections/testimonials/Testimonials';
 import NotFoundPage from './pages/NotFoundPage';
 import LoginForm from './components/ui/forms/LoginForm';
 import Form from './components/ui/forms/Form';
+import RegisterForm from './components/ui/forms/RegisterForm';
 
 const router = createBrowserRouter([
   {
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/register',
-    element: <Form />,
+    element: <RegisterForm />,
   },
 ]);
 
