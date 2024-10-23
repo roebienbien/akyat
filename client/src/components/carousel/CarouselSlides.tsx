@@ -7,8 +7,9 @@ import PrimaryButton from '../ui/buttons/PrimaryButton';
 export default function CarouselSlides({ name, elevation, previewSrc, location, duration, route, difficulty, rating }: ITrailList) {
   return (
     <div className='w-full min-w-0 flex-none  pl-4 sm:w-1/2 md:w-1/3  '>
-      <div className='flex flex-col rounded-md'>
-        <img src={previewSrc} alt='heroguy' className='h-40 rounded-t-md object-cover ' />
+      <div className='flex flex-col'>
+        <img src={previewSrc} alt='heroguy' className='h-60 rounded-t-md object-cover ' />
+
         {/* Content section */}
         <div className='flex h-full flex-col justify-between rounded-b-lg border border-gray-400 '>
           <div className='grid flex-grow  grid-cols-2 gap-y-3  p-2 text-xs lg:grid-cols-3 lg:gap-y-6 lg:p-4 lg:text-lg'>

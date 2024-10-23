@@ -2,10 +2,19 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { useCallback, useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
 import heroGuy from '../../assets/heroguy.jpg';
-import TrailList from '../../sections/trails-section/trail-list';
+import TrailList, { ITrailList } from '../../sections/trails-section/trail-list';
 import CarouselSlides from './CarouselSlides';
 
 export default function Carousel() {
+  /*
+    ADD FILTER FUNCTION
+   function filterByDifficulty(trails: ITrailList[], difficultyFilter: string) {
+     return trails.filter((trail) => trail.difficulty.toLowerCase() === difficultyFilter.toLowerCase());
+   }
+
+   const TrailListByDifficulty = filterByDifficulty(TrailList, 'easy');
+   */
+
   const slidesToScroll = 3;
   const totalScroll = Slides.length / slidesToScroll - 1; //minus 1 cause it's already showing the first half
 
@@ -48,14 +57,14 @@ export default function Carousel() {
         <button
           onClick={scrollPrev}
           disabled={currentIndex === 0}
-          className='-ml-4 flex h-10 w-10 items-center rounded-full bg-gray-100 p-4 shadow-md disabled:opacity-50  sm:-ml-6 sm:h-12 sm:w-12'>
-          <FaChevronLeft className='fill-black' />
+          className='-ml-4 flex h-10 w-10 items-center rounded-full bg-gray-800 p-4 shadow-md disabled:opacity-0 sm:-ml-6 sm:h-12 sm:w-12'>
+          <FaChevronLeft className='fill-white' />
         </button>
         <button
           onClick={scrollNext}
           disabled={currentIndex === totalScroll}
-          className='-mr-4 flex h-10 w-10 items-center rounded-full bg-gray-100 p-4 shadow-md disabled:opacity-50 sm:-mr-6 sm:h-12 sm:w-12'>
-          <FaChevronRight className='fill-black' />
+          className='-mr-4 flex h-10 w-10 items-center rounded-full bg-gray-800 p-4 shadow-md disabled:opacity-0 sm:-mr-6 sm:h-12 sm:w-12'>
+          <FaChevronRight className='fill-white' />
         </button>
       </div>
     </div>

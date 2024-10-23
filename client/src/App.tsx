@@ -12,21 +12,19 @@ import Form from './components/ui/forms/Form';
 import RegisterForm from './components/ui/forms/RegisterForm';
 import Trails from './sections/trails-section/Trails';
 
+// <Hero />
+// <Perks />
+// {/* <Services /> */}
+// <Trails />
+// <Mountains />
+// <AppPromotion />
+// <Testimonials />
+
 const router = createBrowserRouter([
   {
     path: '/',
     errorElement: <NotFoundPage />,
-    element: (
-      <Layout>
-        <Hero />
-        <Perks />
-        {/* <Services /> */}
-        <Trails />
-        <Mountains />
-        <AppPromotion />
-        <Testimonials />
-      </Layout>
-    ),
+    element: <Layout />,
   },
   {
     path: '/login',
@@ -43,3 +41,11 @@ function App() {
 }
 
 export default App;
+
+// <Hero />
+// <Perks />
+// {/* <Services /> */}
+// <Trails />
+// <Mountains />
+// <AppPromotion />
+// <Testimonials />
