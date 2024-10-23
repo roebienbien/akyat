@@ -13,6 +13,26 @@ export default function Trails() {
   console.log('Search');
   console.log(filterByDifficulty(TRAILSDATA, 'blue'));
  */
+
+  // const filterTrails = (trails: ITrail[], filter: 'name' | 'relevancy' | 'difficulty') => {
+  //   switch (filter) {
+  //     case 'name':
+  //       return [...trails].sort((a, b) => a.name.localeCompare(b.name));
+  //     case 'relevancy':
+  //       return [...trails].sort((a, b) => a.relevancy.localeCompare(b.relevancy));
+  //     case 'difficulty':
+  //       return [...trails].sort((a, b) => a.name.localeCompare(b.difficulty));
+  //     default:
+  //       return trails;
+  //   }
+  // };
+
+  const filterByRelevancy = (trails: ITrail[], relevancy: 'popular' | 'new' | 'trending') => {
+    return trails.filter((trail) => trail.relevancy === relevancy);
+  };
+
+  console.log(filterByRelevancy(trailSample, 'trending'));
+
   return (
     <div className='flex h-[100dvh] flex-col gap-y-4 p-2 sm:p-4 lg:px-14 '>
       <div className='flex flex-col gap-y-2'>
@@ -20,67 +40,41 @@ export default function Trails() {
         <h3 className='text-sm text-gray-600'>From beginner trails to advanced climbs, Akyat supports your spiritual journey.</h3>
       </div>
       {/* Carousel navlinks  */}
-      <div className='mb-2 flex gap-x-2'>
-        {TrailNavLinks.map((link, index) => (
-          // SHOULD BE NAVLINKS
-          // <button key={index} className='cursor-pointer rounded-lg bg-gray-200 p-2 hover:bg-gray-700 hover:text-white active:bg-gray-700 active:text-white'>
-          //   {link.name}
-          // </button>
-          <NavLink
-            to={link.src}
-            key={index}
-            className={({ isActive }) => {
-              return isActive ? 'cursor-pointer rounded-lg bg-gray-700 p-2 text-white ' : 'rounded-lg p-2 hover:bg-gray-800 hover:text-white';
-            }}
-            onClick={(event) => {
-              if (link.disable) event.preventDefault();
-            }}>
-            {link.name}
-          </NavLink>
-        ))}
-      </div>
-      <Outlet />
       <Carousel />
     </div>
   );
 }
 
-const TrailNavLinks = [
-  { name: 'Most Popular', src: '/', disable: false },
-  { name: 'New', src: '/new', disable: true },
-  { name: 'Trending', src: '/trending', disable: true },
-];
-
 interface ITrail {
   name: string;
-  price: number;
   difficulty: string;
+  relevancy: string;
 }
 
 const trailSample: ITrail[] = [
   {
     name: 'name1',
-    price: 399,
     difficulty: 'hard',
+    relevancy: 'trending',
   },
   {
     name: 'name2',
-    price: 1999,
     difficulty: 'easy',
+    relevancy: 'new',
   },
   {
     name: 'name3',
-    price: 299,
     difficulty: 'easy',
+    relevancy: 'popular',
   },
   {
     name: 'name4',
-    price: 399,
     difficulty: 'hard',
+    relevancy: 'popular',
   },
   {
     name: 'name1',
-    price: 399,
     difficulty: 'easy',
+    relevancy: 'popular',
   },
 ];

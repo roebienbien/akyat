@@ -11,7 +11,7 @@ export default function CarouselSlides({ name, elevation, previewSrc, location, 
         <img src={previewSrc} alt='heroguy' className='h-60 rounded-t-md object-cover ' />
 
         {/* Content section */}
-        <div className='flex h-full flex-col justify-between rounded-b-lg border border-gray-400 '>
+        <div className='flex h-full flex-col justify-between rounded-b-lg border border-gray-400 bg-gray-50 '>
           <div className='grid flex-grow  grid-cols-2 gap-y-3  p-2 text-xs lg:grid-cols-3 lg:gap-y-6 lg:p-4 lg:text-lg'>
             <span className='col-span-2 text-lg font-semibold lg:col-span-3 lg:text-3xl'>{name}</span>
             <span className='col-span-2 flex items-center gap-x-1 lg:col-span-3 '>

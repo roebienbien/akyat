@@ -15,6 +15,7 @@ export interface ITrailList {
   difficulty: string;
   rating: string;
   description: string;
+  relevancy: string;
   // Other TRAILS think about it
 }
 
@@ -31,6 +32,7 @@ const TrailList: ITrailList[] = [
     difficulty: 'easy',
     rating: '4',
     description: 'Loremloremloremlorem',
+    relevancy: 'new',
   },
   {
     name: 'Mount Pulag',
@@ -43,6 +45,7 @@ const TrailList: ITrailList[] = [
     difficulty: 'easy',
     rating: '3.9',
     description: '',
+    relevancy: 'popular',
   },
   {
     name: 'Mount Batulao',
@@ -55,6 +58,7 @@ const TrailList: ITrailList[] = [
     difficulty: 'hard',
     rating: '3.7',
     description: '',
+    relevancy: 'popular',
   },
   {
     name: 'Mount Ulap',
@@ -67,6 +71,7 @@ const TrailList: ITrailList[] = [
     difficulty: 'hard',
     rating: '4.2',
     description: '',
+    relevancy: 'popular',
   },
   {
     name: 'Mount Pinatubo',
@@ -79,6 +84,7 @@ const TrailList: ITrailList[] = [
     difficulty: 'easy',
     rating: '4.5',
     description: '',
+    relevancy: 'popular',
   },
   {
     name: 'Spartan Trail',
@@ -91,6 +97,7 @@ const TrailList: ITrailList[] = [
     difficulty: 'easy',
     rating: '4',
     description: 'Loremloremloremlorem',
+    relevancy: 'trending',
   },
   {
     name: 'Mount Pulag',
@@ -103,6 +110,7 @@ const TrailList: ITrailList[] = [
     difficulty: 'hard',
     rating: '3.9',
     description: '',
+    relevancy: 'new',
   },
   {
     name: 'Mount Batulao',
@@ -115,6 +123,7 @@ const TrailList: ITrailList[] = [
     difficulty: 'easy',
     rating: '3.7',
     description: '',
+    relevancy: 'trending',
   },
   {
     name: 'Mount Ulap',
@@ -127,6 +136,7 @@ const TrailList: ITrailList[] = [
     difficulty: 'easy',
     rating: '4.2',
     description: '',
+    relevancy: 'popular',
   },
   // {
   //   name: '',

@@ -44,32 +44,74 @@ export default function Carousel() {
     }
   }, [currentIndex, emblaApi]);
 
+  const [selectedRelevancy, setSelectedRelevancy] = useState<filterType>('popular');
+
+  function filterByRelevancy(trails: ITrailList[], relevancy: filterType) {
+    return trails.filter((trail) => trail.relevancy === relevancy);
+  }
+
+  const FilteredTrails = filterByRelevancy(TrailList, selectedRelevancy);
+
   return (
-    <div className='relative mx-auto w-full '>
-      <div ref={emblaRef} className='overflow-hidden'>
-        <div className='-ml-4 flex'>
-          {TrailList.map((trail, index) => (
-            <CarouselSlides key={index} {...trail} />
-          ))}
-        </div>
+    <div>
+      <div className='flex gap-x-2'>
+        {FilterButtons.map((button, index) => (
+          <button
+            key={index}
+            onClick={() => setSelectedRelevancy(button.filter)}
+            className={`${selectedRelevancy === button.filter && 'text bg-gray-700 text-white'} mb-2 rounded-lg p-4 font-semibold hover:bg-gray-300  `}>
+            {button.name}
+          </button>
+        ))}
       </div>
-      <div className='absolute top-1/2 z-50 flex w-full -translate-y-1/2 justify-between'>
-        <button
-          onClick={scrollPrev}
-          disabled={currentIndex === 0}
-          className='-ml-4 flex h-10 w-10 items-center rounded-full bg-gray-800 p-4 shadow-md disabled:opacity-0 sm:-ml-6 sm:h-12 sm:w-12'>
-          <FaChevronLeft className='fill-white' />
-        </button>
-        <button
-          onClick={scrollNext}
-          disabled={currentIndex === totalScroll}
-          className='-mr-4 flex h-10 w-10 items-center rounded-full bg-gray-800 p-4 shadow-md disabled:opacity-0 sm:-mr-6 sm:h-12 sm:w-12'>
-          <FaChevronRight className='fill-white' />
-        </button>
+      <div className='relative mx-auto w-full '>
+        <div ref={emblaRef} className='overflow-hidden'>
+          <div className='-ml-4 flex'>
+            {FilteredTrails.map((trail, index) => (
+              <CarouselSlides key={index} {...trail} />
+            ))}
+          </div>
+        </div>
+        <div className='absolute top-1/2 z-50 flex w-full -translate-y-1/2 justify-between'>
+          <button
+            onClick={scrollPrev}
+            disabled={currentIndex === 0}
+            className='-ml-4 flex h-10 w-10 items-center rounded-full bg-gray-800 p-4 shadow-md disabled:opacity-0 sm:-ml-6 sm:h-12 sm:w-12'>
+            <FaChevronLeft className='fill-white' />
+          </button>
+          <button
+            onClick={scrollNext}
+            disabled={currentIndex === totalScroll}
+            className='-mr-4 flex h-10 w-10 items-center rounded-full bg-gray-800 p-4 shadow-md disabled:opacity-0 sm:-mr-6 sm:h-12 sm:w-12'>
+            <FaChevronRight className='fill-white' />
+          </button>
+        </div>
       </div>
     </div>
   );
 }
+
+type filterType = 'popular' | 'new' | 'trending';
+
+interface IFilterButtons {
+  name: string;
+  filter: filterType;
+}
+
+const FilterButtons: IFilterButtons[] = [
+  {
+    name: 'Popular',
+    filter: 'popular',
+  },
+  {
+    name: 'New',
+    filter: 'new',
+  },
+  {
+    name: 'Trending',
+    filter: 'trending',
+  },
+];
 
 const Slides = [
   {
