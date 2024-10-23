@@ -9,6 +9,7 @@ import PrimaryButton from '../buttons/PrimaryButton';
 import SecondaryButton from '../buttons/SecondaryButton';
 import layeredPeaks from '../../../assets/layered-peaks.svg';
 import akyatLogo from '../../../assets/akyat-logo.svg';
+import OAuth from './OAuth';
 
 const registerSchema = z.object({
   email: z.string({ required_error: 'email is required' }).min(1, 'email is required').email({ message: 'must be valid email' }),
@@ -40,7 +41,7 @@ export default function RegisterForm() {
         <div className='flex flex-col p-4'>
           <img src={akyatLogo} alt='akyatLogo' className='h-7 w-auto lg:h-8' />
           <h2 className='mb-4 text-center text-2xl font-bold lg:text-4xl'>Create your account</h2>
-          <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col justify-items-center gap-y-4 text-xs md:text-sm lg:text-lg '>
+          <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col justify-items-center gap-y-4 text-xs md:text-sm lg:text-base '>
             <span className='text-center  '>
               Already have an Account? {''}
               <Link to={'/login'} className='text-blue-400'>
@@ -51,25 +52,7 @@ export default function RegisterForm() {
             <Input register={register} errors={errors.email} id='password' placeholder='Password' type='password' className='rounded-md ' />
             <Input register={register} errors={errors.email} id='confirmPassword' placeholder='Confirm Password' type='password' className='rounded-md ' />
             <PrimaryButton text={'Login'} className='w-full bg-green-700 px-4 py-2 ' />
-            {/* HORIZONTAL OR */}
-            <div className='inline-flex w-full items-center justify-center'>
-              <hr className='my-2 h-px w-64 border-0 bg-gray-400' />
-              <span className='absolute left-1/2 -translate-x-1/2 bg-gray-100 px-3 font-medium text-gray-900'>or</span>
-            </div>
-
-            <div className=' relative flex items-center justify-center  gap-x-2 rounded-md bg-blue-500 px-4 py-2'>
-              <div className='absolute left-4 rounded-full bg-white p-1'>
-                <FaFacebookF className='h-4 w-4 fill-blue-500' />
-              </div>
-              <PrimaryButton text={'Continue with Facebook'} className='bg-inherit p-0' />
-            </div>
-            <div className=' relative flex items-center justify-center  gap-x-2  rounded-md border border-gray-500 px-4 py-2'>
-              <div className='absolute left-4 h-6 w-6 '>
-                <img src={googleIcon} />
-              </div>
-
-              <SecondaryButton text={'Continue with Google'} className='border-none bg-inherit p-0 text-gray-500 ' />
-            </div>
+            <OAuth />
             <p className='mt-4 text-center lg:text-xs'>
               By continuing to use Akyat, you agree to our{' '}
               <a href='http://www.example.com' target='_blank' className='text-blue-500'>

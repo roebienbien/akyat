@@ -10,6 +10,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import LoginForm from './components/ui/forms/LoginForm';
 import Form from './components/ui/forms/Form';
 import RegisterForm from './components/ui/forms/RegisterForm';
+import Trails from './sections/trails-section/Trails';
 
 const router = createBrowserRouter([
   {
@@ -19,8 +20,8 @@ const router = createBrowserRouter([
       <Layout>
         <Hero />
         <Perks />
-        {/* <Form /> */}
-        <Services />
+        {/* <Services /> */}
+        <Trails />
         <Mountains />
         <AppPromotion />
         <Testimonials />
