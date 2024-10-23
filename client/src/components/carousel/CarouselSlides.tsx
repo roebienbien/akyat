@@ -4,7 +4,7 @@ import { FaMapMarkerAlt } from 'react-icons/fa';
 import { FaMountain, FaRulerHorizontal, FaRegClock, FaRoute, FaGaugeHigh, FaStar } from 'react-icons/fa6';
 import PrimaryButton from '../ui/buttons/PrimaryButton';
 
-export default function CarouselSlides({ name, elevation, previewSrc, location, duration, route, difficulty, rating, description }: ITrailList) {
+export default function CarouselSlides({ name, elevation, previewSrc, location, duration, route, difficulty, rating }: ITrailList) {
   return (
     <div className='w-full min-w-0 flex-none  pl-4 sm:w-1/2 md:w-1/3  '>
       <div className='flex flex-col rounded-md'>
