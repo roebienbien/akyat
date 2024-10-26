@@ -13,16 +13,17 @@ function Layout() {
   return (
     <div className='min-w-[320px] bg-zinc-100 font-sans'>
       <Navbar />
-      <Hero />
-      <Perks />
-      {/* <Services /> */}
-      <Trails />
-      <Mountains />
-      <AppPromotion />
-      <Testimonials />
-      {/* <Footer /> */}
+      <Outlet />
+      <Footer />
     </div>
   );
 }
 
 export default Layout;
+
+// <Hero />
+// <Perks />
+// <Trails />
+// <Mountains />
+// <AppPromotion />
+// <Testimonials />

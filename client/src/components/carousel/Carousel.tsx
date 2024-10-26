@@ -1,5 +1,5 @@
 import useEmblaCarousel from 'embla-carousel-react';
-import { useCallback, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
 import heroGuy from '../../assets/heroguy.jpg';
 import TrailList, { ITrailList } from '../../sections/trails-section/trail-list';
@@ -15,7 +15,7 @@ export default function Carousel() {
    const TrailListByDifficulty = filterByDifficulty(TrailList, 'easy');
    */
 
-  const slidesToScroll = 3;
+  const slidesToScroll = 4;
   const totalScroll = Slides.length / slidesToScroll - 1; //minus 1 cause it's already showing the first half
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -47,10 +47,29 @@ export default function Carousel() {
   const [selectedRelevancy, setSelectedRelevancy] = useState<filterType>('popular');
 
   function filterByRelevancy(trails: ITrailList[], relevancy: filterType) {
-    return trails.filter((trail) => trail.relevancy === relevancy);
+    const filteredTrails = trails.filter((trail) => trail.relevancy === relevancy);
+    const defaultTrails = {
+      name: 'More Trail Coming',
+      previewSrc: heroGuy,
+      location: 'More Trail Coming Soon',
+      elevation: '0m',
+      duration: '0h',
+      length: '0km',
+      route: 'N/A',
+      difficulty: 'N/A',
+      rating: '0',
+      description: 'Loremloremloremlorem',
+      relevancy: relevancy,
+    };
+
+    while (filteredTrails.length < 12) filteredTrails.push({ ...defaultTrails });
+
+    return filteredTrails;
   }
 
-  const FilteredTrails = filterByRelevancy(TrailList, selectedRelevancy);
+  const FilteredTrails1 = filterByRelevancy(TrailList, selectedRelevancy);
+
+  const FilteredTrails = useMemo(() => filterByRelevancy(TrailList, selectedRelevancy), [TrailList, selectedRelevancy]);
 
   return (
     <div>
