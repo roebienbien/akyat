@@ -1,16 +1,18 @@
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import { FaGaugeHigh, FaMountain, FaRegClock, FaRulerHorizontal, FaStar } from 'react-icons/fa6';
-import { ITrailList } from '../../sections/trails-section/trail-list';
-import PrimaryButton from '../ui/buttons/PrimaryButton';
+import { NavLink } from 'react-router-dom';
+import { ITrails } from '../../sections/trails-section/trail-list';
 
-export default function CarouselSlides({ name, elevation, previewSrc, location, duration, difficulty, rating }: ITrailList) {
+export default function CarouselSlides({ name, route, elevation, previewSrc, location, duration, difficulty, rating }: ITrails) {
   return (
     <div className='w-full min-w-0 flex-none  pl-4 sm:w-1/2 md:w-1/3 lg:w-1/4  '>
-      <div className='flex flex-col'>
-        <img src={previewSrc} alt='trail-preview' className='h-1/2 rounded-t-md object-cover ' />
+      <div className='flex  h-[400px] flex-col'>
+        <NavLink to={`trails${route}`} className='h-1/3'>
+          <img src={previewSrc} alt='trail-preview' className='h-full w-full rounded-t-md object-cover ' />
+        </NavLink>
         {/* Content section */}
-        <div className='flex h-full flex-col justify-between rounded-b-lg border border-gray-400 bg-gray-50'>
-          <div className='grid grid-cols-2 gap-y-2 p-4 text-xs lg:grid-cols-3 lg:text-base'>
+        <div className='flex  flex-col justify-between rounded-b-lg border border-gray-400 bg-gray-50'>
+          <div className='grid  flex-grow grid-cols-2 gap-y-2 p-4 text-xs lg:grid-cols-3 lg:text-base'>
             {/* <span className='col-span-2 text-lg font-semibold lg:col-span-3 lg:text-3xl'>
               {name} <span className='text-sm'>({relevancy})</span>
             </span> */}
@@ -35,7 +37,7 @@ export default function CarouselSlides({ name, elevation, previewSrc, location, 
                 <FaRoute />
                 {route}
               </span> */}
-              <span className='flex items-center gap-x-1'>
+              <span className='flexitems-center gap-x-1'>
                 <FaGaugeHigh /> {difficulty}
               </span>
               <span className='flex items-center gap-x-1'>
@@ -48,7 +50,10 @@ export default function CarouselSlides({ name, elevation, previewSrc, location, 
               voluptatem animi.
             </p> */}
             <div className='col-span-3 w-full'>
-              <PrimaryButton text='Explore Trail' className='w-full bg-green-600 px-4 py-2' />
+              <NavLink to={`/trails/${route}`} className='flex w-full justify-center rounded bg-green-600 px-4 py-2 text-white '>
+                Explore Link
+              </NavLink>
+              {/* <PrimaryButton text='Explore Trail' className='w-full bg-green-600 px-4 py-2' /> */}
             </div>
           </div>
         </div>

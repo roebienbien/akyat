@@ -4,14 +4,16 @@ import spartanTrail from '../../assets/mountains/spartan-trail.jpg';
 import mountBatulao from '../../assets/mountains/mount-batulao.jpg';
 import mountPinatubo from '../../assets/mountains/mount-pinatubo.jpg';
 
-export interface ITrailList {
+export interface ITrails {
   name: string;
+  route: string;
+  price: number;
   previewSrc: string;
   location: string;
   elevation: string; //Elevation gain:
   duration: string;
   length: string;
-  route: string;
+  trailRoute: string;
   difficulty: string;
   rating: string;
   description: string;
@@ -20,15 +22,17 @@ export interface ITrailList {
 }
 
 // references: Traveloka 7 best mountains hiking trail
-const TrailList: ITrailList[] = [
+const Trails: ITrails[] = [
   {
     name: 'Spartan Trail',
+    route: 'spartanTrail',
+    price: 1999,
     previewSrc: spartanTrail,
     location: 'Buhisan Watershed Forest Reserved',
     elevation: '587m',
     duration: '2h 2m',
     length: '5.5km',
-    route: 'Point to Point',
+    trailRoute: 'Point to Point',
     difficulty: 'easy',
     rating: '4',
     description: 'Loremloremloremlorem',
@@ -36,12 +40,14 @@ const TrailList: ITrailList[] = [
   },
   {
     name: 'Mount Pulag',
+    route: 'pulag',
+    price: 1999,
     previewSrc: mountPulag,
     location: 'Grand Cordillera Central',
     elevation: '2922m',
     duration: '5h 9m',
     length: '14.5km',
-    route: 'Out & back',
+    trailRoute: 'Out & back',
     difficulty: 'easy',
     rating: '3.9',
     description: '',
@@ -49,12 +55,14 @@ const TrailList: ITrailList[] = [
   },
   {
     name: 'Mount Batulao',
+    route: 'batulao',
+    price: 1999,
     previewSrc: mountBatulao,
     location: 'Nasugbo, Batangas',
     elevation: '811',
     duration: '5h 9m',
     length: '10.3km',
-    route: 'Out & Back',
+    trailRoute: 'Out & Back',
     difficulty: 'hard',
     rating: '3.7',
     description: '',
@@ -62,12 +70,14 @@ const TrailList: ITrailList[] = [
   },
   {
     name: 'Mount Ulap',
+    route: 'ulap',
+    price: 1999,
     previewSrc: mountUlap,
     location: 'Itogon, Benguet',
     elevation: '488m',
     duration: '3h 31m',
     length: '7.9km',
-    route: 'Point to Point',
+    trailRoute: 'Point to Point',
     difficulty: 'hard',
     rating: '4.2',
     description: '',
@@ -75,12 +85,14 @@ const TrailList: ITrailList[] = [
   },
   {
     name: 'Mount Pinatubo',
+    route: 'pinatubo',
+    price: 1999,
     previewSrc: mountPinatubo,
     location: 'Subic, Zambales',
     elevation: '1486',
     duration: '4h 1m',
     length: '11.1km',
-    route: 'Out & Back',
+    trailRoute: 'Out & Back',
     difficulty: 'easy',
     rating: '4.5',
     description: '',
@@ -88,12 +100,14 @@ const TrailList: ITrailList[] = [
   },
   {
     name: 'Spartan Trail',
+    route: 'spartanTrail',
+    price: 1999,
     previewSrc: spartanTrail,
     location: 'Buhisan Watershed Forest Reserved',
     elevation: '587m',
     duration: '2h 2m',
     length: '5.5km',
-    route: 'Point to Point',
+    trailRoute: 'Point to Point',
     difficulty: 'easy',
     rating: '4',
     description: 'Loremloremloremlorem',
@@ -101,12 +115,14 @@ const TrailList: ITrailList[] = [
   },
   {
     name: 'Mount Pulag',
+    route: 'pulag',
+    price: 1999,
     previewSrc: mountPulag,
     location: 'Grand Cordillera Central',
     elevation: '2922m',
     duration: '5h 9m',
     length: '14.5km',
-    route: 'Out & back',
+    trailRoute: 'Out & back',
     difficulty: 'hard',
     rating: '3.9',
     description: '',
@@ -114,12 +130,14 @@ const TrailList: ITrailList[] = [
   },
   {
     name: 'Mount Batulao',
+    route: 'batulao',
+    price: 1999,
     previewSrc: mountBatulao,
     location: 'Nasugbo, Batangas',
     elevation: '811',
     duration: '5h 9m',
     length: '10.3km',
-    route: 'Out & Back',
+    trailRoute: 'Out & Back',
     difficulty: 'easy',
     rating: '3.7',
     description: '',
@@ -127,12 +145,14 @@ const TrailList: ITrailList[] = [
   },
   {
     name: 'Mount Ulap',
+    route: 'ulap',
+    price: 1999,
     previewSrc: mountUlap,
     location: 'Itogon, Benguet',
     elevation: '488m',
     duration: '3h 31m',
     length: '7.9km',
-    route: 'Point to Point',
+    trailRoute: 'Point to Point',
     difficulty: 'easy',
     rating: '4.2',
     description: '',
@@ -145,11 +165,11 @@ const TrailList: ITrailList[] = [
   //   elevation: '',
   //   duration: '',
   //   length: '',
-  //   route: '',
+  //  trailRoute: '',
   //   difficulty: '',
   //   rating: '',
   //   description: '',
   // },
 ];
 
-export default TrailList;
+export default Trails;

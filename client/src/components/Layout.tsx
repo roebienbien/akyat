@@ -8,12 +8,15 @@ import Mountains from '../sections/mountains-section/Mountains';
 import Perks from '../sections/perks-section/Perks';
 import Testimonials from '../sections/testimonials/Testimonials';
 import Trails from '../sections/trails-section/Trails';
+import TrailsProvider from '../sections/trails-section/TrailsContext';
 
 function Layout() {
   return (
     <div className='min-w-[320px] bg-zinc-100 font-sans'>
       <Navbar />
-      <Outlet />
+      <TrailsProvider>
+        <Outlet />
+      </TrailsProvider>
       <Footer />
     </div>
   );
