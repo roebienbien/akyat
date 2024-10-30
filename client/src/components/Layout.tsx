@@ -12,7 +12,7 @@ import TrailsProvider from '../sections/trails-section/TrailsContext';
 
 function Layout() {
   return (
-    <div className='min-w-[320px] bg-zinc-100 font-sans'>
+    <div className='min-w-[320px] scroll-smooth bg-zinc-100 font-sans'>
       <Navbar />
       <TrailsProvider>
         <Outlet />

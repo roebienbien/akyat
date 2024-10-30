@@ -5,8 +5,6 @@ import heroGuy from '../../assets/heroguy.jpg';
 import TrailsProvider from './TrailsContext';
 import TrailPage from './TrailPage';
 import { useState } from 'react';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 
 export default function Trails() {
   const [startDate, setStartDate] = useState(new Date());

@@ -10,6 +10,7 @@ import Perks from './sections/perks-section/Perks';
 import Testimonials from './sections/testimonials/Testimonials';
 import TrailPage from './sections/trails-section/TrailPage';
 import Trails from './sections/trails-section/Trails';
+import StarRating from './components/StarRating';
 
 const router = createBrowserRouter([
   {
