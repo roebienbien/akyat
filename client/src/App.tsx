@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
 import LoginForm from './components/ui/forms/LoginForm';
 import RegisterForm from './components/ui/forms/RegisterForm';
@@ -11,6 +11,9 @@ import Testimonials from './sections/testimonials/Testimonials';
 import TrailPage from './sections/trails-section/TrailPage';
 import Trails from './sections/trails-section/Trails';
 import StarRating from './components/StarRating';
+import { useEffect } from 'react';
+import ScrollToTop from './components/ScrollToTop';
+import Carousel from './components/carousel/Carousel';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +25,7 @@ const router = createBrowserRouter([
         path: '/',
         element: (
           <>
+            <ScrollToTop />
             <Hero />
             <Perks />
             {/* <Services /> */}
@@ -35,10 +39,10 @@ const router = createBrowserRouter([
       {
         path: '/trails',
         element: <Trails />,
-        // children: [],
+        children: [],
       },
       {
-        path: 'trails/:trailId',
+        path: '/trails/:trailId',
         element: <TrailPage />,
       },
     ],

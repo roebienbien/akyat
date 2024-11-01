@@ -1,26 +1,66 @@
 import useEmblaCarousel from 'embla-carousel-react';
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
 import heroGuy from '../../assets/heroguy.jpg';
 import Trails, { ITrails } from '../../sections/trails-section/trail-list';
 import CarouselSlides from './CarouselSlides';
-import { NavLink } from 'react-router-dom';
 
-export default function Carousel() {
-  const slidesToScroll = 4;
-  const totalScroll = Slides.length / slidesToScroll - 1; //minus 1 cause it's already showing the first half
+function filterByRelevancy(trails: ITrails[], relevancy: filterType) {
+  const filteredTrails = trails.filter((trail) => trail.relevancy === relevancy);
+  const defaultTrails = {
+    name: 'More Trail Coming',
+    price: 0,
+    route: 'defaultRoute',
+    previewSrc: heroGuy,
+    location: 'More Trail Coming Soon',
+    elevation: '0',
+    duration: 0,
+    length: '0',
+    trailType: 'N/A',
+    difficulty: 'N/A',
+    rating: 0,
+    description: 'Loremloremloremlorem',
+    relevancy: relevancy,
+  };
 
-  // draggable: false,
+  while (filteredTrails.length < 12) filteredTrails.push({ ...defaultTrails });
+
+  return filteredTrails;
+}
+
+export function Carousel() {
+  const [selectedRelevancy, setSelectedRelevancy] = useState<filterType>('popular');
+  const FilteredTrails = useMemo(() => filterByRelevancy(Trails, selectedRelevancy), [Trails, selectedRelevancy]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [slidesToScroll, setSlidesToScroll] = useState(1);
+
+  // const slidesToScroll = 1;
+  const totalScroll = FilteredTrails.length / slidesToScroll - 1; //minus 1 cause it's already showing the first half
+
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
-    slidesToScroll: slidesToScroll,
-    breakpoints: {
-      '(min-width:0px)': { slidesToScroll: slidesToScroll },
-      '(min-width: 640px)': { slidesToScroll: slidesToScroll },
-    },
+    slidesToScroll,
   });
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  useEffect(() => {
+    // handle how many slides to scroll on breakpoints
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width >= 1024) {
+        setSlidesToScroll(4);
+      } else if (width >= 768) {
+        setSlidesToScroll(3);
+      } else if (width >= 640) {
+        setSlidesToScroll(2);
+      } else {
+        setSlidesToScroll(1);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const scrollPrev = useCallback(() => {
     if (currentIndex > 0) {
@@ -36,32 +76,6 @@ export default function Carousel() {
     }
   }, [currentIndex, emblaApi]);
 
-  const [selectedRelevancy, setSelectedRelevancy] = useState<filterType>('popular');
-
-  function filterByRelevancy(trails: ITrails[], relevancy: filterType) {
-    const filteredTrails = trails.filter((trail) => trail.relevancy === relevancy);
-    const defaultTrails = {
-      name: 'More Trail Coming',
-      route: 'defaultRoute',
-      previewSrc: heroGuy,
-      location: 'More Trail Coming Soon',
-      elevation: '0',
-      duration: '0',
-      length: '0',
-      trailRoute: 'N/A',
-      difficulty: 'N/A',
-      rating: '0',
-      description: 'Loremloremloremlorem',
-      relevancy: relevancy,
-    };
-
-    while (filteredTrails.length < 12) filteredTrails.push({ ...defaultTrails });
-
-    return filteredTrails;
-  }
-
-  const FilteredTrails = useMemo(() => filterByRelevancy(Trails, selectedRelevancy), [Trails, selectedRelevancy]);
-
   return (
     <div>
       <div className='flex gap-x-2'>
@@ -74,7 +88,7 @@ export default function Carousel() {
           </button>
         ))}
       </div>
-      <div className='relative mx-auto w-full '>
+      <div className='relative mx-auto w-full'>
         <div ref={emblaRef} className='overflow-hidden'>
           <div className='-ml-4 flex'>
             {FilteredTrails.map((trail, index) => (
@@ -123,33 +137,4 @@ const FilterButtons: IFilterButtons[] = [
   },
 ];
 
-const Slides = [
-  {
-    name: 'Slide 1',
-    img: heroGuy,
-  },
-  {
-    name: 'Slide 2',
-  },
-  {
-    name: 'Slide 3',
-  },
-  {
-    name: 'Slide 4',
-  },
-  {
-    name: 'Slide 5',
-  },
-  {
-    name: 'Slide 6',
-  },
-  {
-    name: 'Slide 7',
-  },
-  {
-    name: 'Slide 8',
-  },
-  {
-    name: 'Slide 9',
-  },
-];
+export default Carousel;

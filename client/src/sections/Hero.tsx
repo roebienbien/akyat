@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import heroGuy from '../assets/heroguy.jpg';
 import StarRating from '../components/StarRating';
 import Button from '../components/ui/Button';
@@ -22,7 +23,9 @@ export default function Hero() {
           </p>
           {/* <Button text='Explore' className='mx-auto mt-8 h-14 w-40 border-2 border-black  text-base  font-semibold text-black md:mx-0   ' /> */}
           {/* <Button text='Explore' className='mx-auto mt-8 h-14 w-40 border-2 border-green-600 text-base  font-semibold  text-black text-green-600 md:mx-0   ' /> */}
-          <button className={`mx-auto mt-4 w-fit  bg-green-600 px-6 py-2 text-sm text-white hover:bg-green-700 md:mx-0 lg:px-16 lg:py-4 lg:text-lg`}>Explore</button>
+          <Link to='/trails' className={`mx-auto mt-4 w-fit  bg-green-600 px-6 py-2 text-sm text-white hover:bg-green-700 md:mx-0 lg:px-16 lg:py-4 lg:text-lg`}>
+            Book a Hike
+          </Link>
         </div>
       </div>
     </div>

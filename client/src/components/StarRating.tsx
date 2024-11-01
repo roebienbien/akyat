@@ -1,9 +1,10 @@
 import Rating from '@mui/material/Rating';
 
-export default function StarRating({ value }: { value: number }) {
+type TSize = 'small' | 'medium' | 'large';
+
+export default function StarRating({ value, size }: { value: number; size?: TSize }) {
   return (
-    // <div className='flex items-center'>
-    <Rating name='read-only' value={value} precision={0.1} size='medium' readOnly />
-    // </div>
+    // <Rating name='read-only' value={value} precision={0.1} size='medium' readOnly />
+    <Rating name='read-only' value={value} precision={0.1} size={size || 'medium'} readOnly />
   );
 }

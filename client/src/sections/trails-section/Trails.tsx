@@ -5,9 +5,9 @@ import heroGuy from '../../assets/heroguy.jpg';
 import TrailsProvider from './TrailsContext';
 import TrailPage from './TrailPage';
 import { useState } from 'react';
+import ScrollToTop from '../../components/ScrollToTop';
 
 export default function Trails() {
-  const [startDate, setStartDate] = useState(new Date());
   return (
     <div className='mt-16 flex h-[100dvh] flex-col gap-y-4 p-2 sm:p-4 lg:px-14 '>
       <div className='flex flex-col gap-y-2'>
@@ -16,7 +16,7 @@ export default function Trails() {
       </div>
       {/* Carousel navlinks  */}
       <Carousel />
-      <TrailPage />
+      {/* <TrailPage /> */}
     </div>
   );
 }

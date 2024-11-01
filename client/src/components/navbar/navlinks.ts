@@ -17,7 +17,7 @@ export const Navlinks = [
     src: '#blog',
   },
   {
-    title: 'Pricing',
-    src: '#pricing',
+    title: 'About',
+    src: '#about',
   },
 ];

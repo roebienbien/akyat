@@ -1,12 +1,12 @@
-import { Link, useParams } from 'react-router-dom';
-import { useTrailsContext } from './TrailsContext';
 import { ChangeEvent, FormEvent, useState } from 'react';
-import PrimaryButton from '../../components/ui/buttons/PrimaryButton';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import { FaGaugeHigh, FaLocationDot, FaMinus, FaMountain, FaPlus, FaRegClock, FaRegStar, FaRoute, FaRulerHorizontal, FaRulerVertical } from 'react-icons/fa6';
-import Carousel from '../../components/carousel/Carousel';
+import { FaGaugeHigh, FaLocationDot, FaMinus, FaMountain, FaPlus, FaRegClock, FaRoute, FaRulerHorizontal, FaRulerVertical } from 'react-icons/fa6';
+import { useParams } from 'react-router-dom';
 import StarRating from '../../components/StarRating';
+import PrimaryButton from '../../components/ui/buttons/PrimaryButton';
+import { useTrailsContext } from './TrailsContext';
+import ScrollToTop from '../../components/ScrollToTop';
 
 export default function TrailPage() {
   const [count, setCount] = useState<number>(1);
@@ -95,15 +95,29 @@ export default function TrailPage() {
               <FaRoute />
               {trailType}
             </span>
-            <span className='max-w-2xl'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates vel obcaecati distinctio ut reprehenderit temporibus assumenda maxime quo unde officiis?
-            </span>
+            <div className='flex flex-col gap-y-4 text-justify  lg:max-w-[740px]'>
+              <span className='text-3xl font-semibold'>Overview</span>
+              <span className='flex flex-col gap-y-4'>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quis ex quisquam vel eius maxime error neque excepturi atque facere. Lorem ipsum dolor sit amet
+                  consectetur adipisicing elit. Repellat est debitis labore deleniti unde voluptatibus aliquid iste illum nemo praesentium?
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quis ex quisquam vel eius maxime error neque excepturi atque facere. Lorem ipsum dolor sit amet
+                  consectetur adipisicing elit. Repellat est debitis labore deleniti unde voluptatibus aliquid iste illum nemo praesentium?
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quis ex quisquam vel eius maxime error neque excepturi atque facere. Lorem ipsum dolor sit amet
+                  consectetur adipisicing elit. Repellat est debitis labore deleniti unde voluptatibus aliquid iste illum nemo praesentium?
+                </p>
+              </span>
+            </div>
           </div>
           {/* Floating Form */}
           <div className='sticky top-0 z-50 h-fit max-w-3xl rounded-lg border border-gray-300 px-4 py-6 shadow-2xl'>
             <form onSubmit={handleSubmit} className='flex flex-col justify-items-center gap-y-4  px-2 '>
               <div className='flex flex-col'>
-                <span className='text-lg'>₱{price.toLocaleString()} / Guest</span>
+                <span className='text-lg'>₱{price.toLocaleString()} / guest</span>
                 <div className='flex items-center gap-x-2'>
                   <span>Hike Date</span>
                   <DatePicker selected={startDate} onChange={(date) => date && setStartDate(date)} showIcon className='cursor-pointer text-center' />
@@ -132,13 +146,12 @@ export default function TrailPage() {
             </form>
           </div>
         </div>
-        <div id='reviews' className='h-screen text-4xl'>
+        {/* <div id='reviews' className='h-screen text-4xl'>
           Reviews
         </div>
         <div>
           <span className='lg:text-4xl'>Related Trails</span>
-          {/* <Carousel /> */}
-        </div>
+        </div> */}
       </div>
     </div>
   );
