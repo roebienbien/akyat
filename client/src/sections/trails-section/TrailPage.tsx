@@ -3,10 +3,17 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { FaGaugeHigh, FaLocationDot, FaMinus, FaMountain, FaPlus, FaRegClock, FaRoute, FaRulerHorizontal, FaRulerVertical } from 'react-icons/fa6';
 import { useParams } from 'react-router-dom';
+import kelly from '../../assets/kelly-smith.jpg';
 import StarRating from '../../components/StarRating';
 import PrimaryButton from '../../components/ui/buttons/PrimaryButton';
 import { useTrailsContext } from './TrailsContext';
-import ScrollToTop from '../../components/ScrollToTop';
+
+const convertToHoursAndMinutes = (minutes: number) => {
+  const hours = Math.floor(minutes / 60);
+  const remainingMinutes = minutes % 60;
+
+  return `${hours} hr${hours !== 1 ? 's' : ''} ${remainingMinutes} min${remainingMinutes !== 1 ? 's' : ''}`;
+};
 
 export default function TrailPage() {
   const [count, setCount] = useState<number>(1);
@@ -38,11 +45,12 @@ export default function TrailPage() {
   if (!trail) return <div className='text-red-500'>Error: Trail Not Found</div>;
 
   const { name, price, previewSrc, location, elevation, duration, length, trailType, difficulty, rating, relevancy } = trail;
+  const formattedDuration = convertToHoursAndMinutes(duration);
 
   const TrailInfo = [
     { icon: <FaLocationDot />, label: 'Location', value: location },
-    { icon: <FaMountain />, label: 'Elevation', value: `${elevation} km` },
-    { icon: <FaRegClock />, label: 'Duration', value: `${duration} mins` },
+    { icon: <FaMountain />, label: 'Elevation', value: `${elevation} m` },
+    { icon: <FaRegClock />, label: 'Duration', value: formattedDuration },
     { icon: <FaRulerVertical />, label: 'Elevation Gain', value: `${elevation} m` },
     { icon: <FaRulerHorizontal />, label: 'Length', value: `${length} km` },
     { icon: <FaGaugeHigh />, label: 'Difficulty', value: difficulty },
@@ -65,8 +73,8 @@ export default function TrailPage() {
         </div>
 
         {/* Trail Contents */}
-        <div className='grid  lg:grid-cols-3 lg:gap-4'>
-          <div className='col-span-2 flex h-screen max-h-screen flex-col gap-y-2'>
+        <div className=' grid lg:grid-cols-3'>
+          <div className='col-span-2 flex h-screen max-h-screen w-[95%] flex-col gap-y-2  md:gap-y-10'>
             <div className='flex items-center gap-x-4 '>
               <h2 className='text-2xl font-semibold lg:text-4xl'>{name}</h2>
               <span className='flex h-full items-end gap-x-1 underline  lg:text-lg'>
@@ -78,18 +86,39 @@ export default function TrailPage() {
                 </a>
               </span>
             </div>
+            {/* Trail Coordinator */}
+            <div className='flex items-center gap-x-6 border-b border-t border-gray-400'>
+              <div>
+                <img src={kelly} alt='coordinator-avatar' className='h-12 w-12 rounded-full object-cover' />
+              </div>
+              <div className='flex flex-col py-4'>
+                <span className='text-xl font-medium'>Kelly Smith</span>
+                <span className='text-sm text-gray-500'>Hiking Coordinator</span>
+              </div>
+            </div>
 
-            {/* Trail Info */}
-            {TrailInfo.map((trail, index) => (
-              <div key={index} className='flex items-center gap-x-2 text-xl'>
-                {/* <FaLocationDot className='text-3xl' /> */}
-                {trail.icon}
-                <div className='flex flex-col'>
-                  <span className='font-medium'>{trail.label}</span>
+            {/* <div className='flex flex-col gap-y-4'>
+              {TrailInfo.map((trail, index) => (
+                <div key={index} className='flex items-center gap-x-6 text-2xl'>
+                  {trail.icon}
+                  <span className='text-xl font-medium'>{trail.label}:</span>
                   <span className='col-start-2 text-base text-gray-600'>{trail.value}</span>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div> */}
+
+            {/* Trail Info */}
+            <div className='grid grid-cols-2 gap-6'>
+              {TrailInfo.map((trail, index) => (
+                <div key={index} className='flex items-center gap-x-6 text-2xl'>
+                  {trail.icon}
+                  <div className='flex flex-col'>
+                    <span className='text-xl font-medium'>{trail.value}</span>
+                    <span className='col-start-2 text-sm text-gray-500'>{trail.label}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
 
             {/* Trail Overview */}
             <div className='flex flex-col gap-y-4 text-justify  lg:max-w-[740px]'>
