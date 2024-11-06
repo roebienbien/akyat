@@ -3,15 +3,15 @@ import { TPerks } from './perks-list';
 
 export default function PerksCard({ icon: Icon, perk, description }: TPerks) {
   return (
-    <li className='mt-8 flex flex-col  px-2 md:flex-row  md:items-start  md:space-x-4 xl:max-w-7xl  '>
-      <div className='mt-1 grid justify-items-start md:mt-0 md:justify-items-start'>
-        <div className='flex items-center gap-x-2'>
-          <div className='rounded-full bg-green-500 p-2'>
-            <Icon className='fill-white text-sm  md:text-base' />
-          </div>
-          <span className='text-sm font-semibold lg:text-2xl'>{perk}</span>
+    <li className='flex gap-x-2'>
+      <div className='flex'>
+        <div className='flex aspect-square h-8 items-center justify-center rounded-full bg-green-600 p-2 md:h-12 md:w-12'>
+          <Icon className='fill-white text-sm  md:text-base lg:text-2xl' />
         </div>
-        <p className='text-justify text-xs text-gray-500 md:mt-2'>{description}</p>
+      </div>
+      <div className='flex flex-col  text-start'>
+        <span className='text-sm font-semibold lg:text-3xl'>{perk}</span>
+        <p className=' text-xs text-gray-500 md:mt-2 md:text-base'>{description}</p>
       </div>
     </li>
   );

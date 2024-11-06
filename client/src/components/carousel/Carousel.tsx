@@ -4,6 +4,7 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
 import heroGuy from '../../assets/heroguy.jpg';
 import Trails, { ITrails } from '../../sections/trails-section/trail-list';
 import CarouselSlides from './CarouselSlides';
+import useSlidesToScroll from '../../hooks/useSlidesToScroll';
 
 function filterByRelevancy(trails: ITrails[], relevancy: filterType) {
   const filteredTrails = trails.filter((trail) => trail.relevancy === relevancy);
@@ -29,38 +30,16 @@ function filterByRelevancy(trails: ITrails[], relevancy: filterType) {
 }
 
 export function Carousel() {
-  const [selectedRelevancy, setSelectedRelevancy] = useState<filterType>('popular');
-  const FilteredTrails = useMemo(() => filterByRelevancy(Trails, selectedRelevancy), [Trails, selectedRelevancy]);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [slidesToScroll, setSlidesToScroll] = useState(1);
-
-  // const slidesToScroll = 1;
-  const totalScroll = FilteredTrails.length / slidesToScroll - 1; //minus 1 cause it's already showing the first half
-
+  const slidesToScroll = useSlidesToScroll();
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
     slidesToScroll,
   });
+  const [selectedRelevancy, setSelectedRelevancy] = useState<filterType>('popular');
+  const FilteredTrails = useMemo(() => filterByRelevancy(Trails, selectedRelevancy), [Trails, selectedRelevancy]);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  useEffect(() => {
-    // handle how many slides to scroll on breakpoints
-    const handleResize = () => {
-      const width = window.innerWidth;
-      if (width >= 1024) {
-        setSlidesToScroll(4);
-      } else if (width >= 768) {
-        setSlidesToScroll(3);
-      } else if (width >= 640) {
-        setSlidesToScroll(2);
-      } else {
-        setSlidesToScroll(1);
-      }
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  const totalScroll = FilteredTrails.length / slidesToScroll - 1; //minus 1  cause it's already showing the first set of slides
 
   const scrollPrev = useCallback(() => {
     if (currentIndex > 0) {
@@ -77,18 +56,18 @@ export function Carousel() {
   }, [currentIndex, emblaApi]);
 
   return (
-    <div>
-      <div className='flex gap-x-2'>
+    <div className=''>
+      <div className='mb-2 flex gap-x-2'>
         {FilterButtons.map((button, index) => (
           <button
             key={index}
             onClick={() => setSelectedRelevancy(button.filter)}
-            className={`${selectedRelevancy === button.filter && 'text bg-gray-700 text-white'} mb-2 rounded-lg p-4 font-semibold hover:bg-gray-300  `}>
+            className={`${selectedRelevancy === button.filter && 'text bg-gray-700 text-white'} mb-2  p-2 text-sm font-semibold hover:bg-gray-300  `}>
             {button.name}
           </button>
         ))}
       </div>
-      <div className='relative mx-auto w-full'>
+      <div className='relative mx-auto  w-full'>
         <div ref={emblaRef} className='overflow-hidden'>
           <div className='-ml-4 flex'>
             {FilteredTrails.map((trail, index) => (

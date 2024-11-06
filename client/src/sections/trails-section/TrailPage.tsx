@@ -39,8 +39,18 @@ export default function TrailPage() {
 
   const { name, price, previewSrc, location, elevation, duration, length, trailType, difficulty, rating, relevancy } = trail;
 
+  const TrailInfo = [
+    { icon: <FaLocationDot />, label: 'Location', value: location },
+    { icon: <FaMountain />, label: 'Elevation', value: `${elevation} km` },
+    { icon: <FaRegClock />, label: 'Duration', value: `${duration} mins` },
+    { icon: <FaRulerVertical />, label: 'Elevation Gain', value: `${elevation} m` },
+    { icon: <FaRulerHorizontal />, label: 'Length', value: `${length} km` },
+    { icon: <FaGaugeHigh />, label: 'Difficulty', value: difficulty },
+    { icon: <FaRoute />, label: 'Trail Type', value: trailType },
+  ];
+
   return (
-    <div className='min-h-screen bg-gray-50 px-2  lg:p-10'>
+    <div className='mt-16 min-h-screen bg-gray-50 px-2  lg:p-10'>
       <div className='mx-auto grid gap-y-4  lg:max-w-6xl'>
         {/* Image Preview */}
         <div className='grid grid-cols-2  gap-2'>
@@ -53,6 +63,7 @@ export default function TrailPage() {
               ))}
           </div>
         </div>
+
         {/* Trail Contents */}
         <div className='grid  lg:grid-cols-3 lg:gap-4'>
           <div className='col-span-2 flex h-screen max-h-screen flex-col gap-y-2'>
@@ -67,34 +78,20 @@ export default function TrailPage() {
                 </a>
               </span>
             </div>
-            <span className='flex items-center gap-x-1'>
-              <FaLocationDot />
-              {location}
-            </span>
-            <span className='flex items-center gap-x-1'>
-              <FaMountain />
-              {elevation} km
-            </span>
-            <span className='flex items-center gap-x-1'>
-              <FaRegClock />
-              {duration}mins
-            </span>
-            <span className='flex items-center gap-x-1'>
-              <FaRulerVertical />
-              {elevation}
-            </span>
-            <span className='flex items-center gap-x-1'>
-              <FaRulerHorizontal />
-              {length}
-            </span>
-            <span className='flex items-center gap-x-1'>
-              <FaGaugeHigh />
-              {difficulty}
-            </span>
-            <span className='flex items-center gap-x-1'>
-              <FaRoute />
-              {trailType}
-            </span>
+
+            {/* Trail Info */}
+            {TrailInfo.map((trail, index) => (
+              <div key={index} className='flex items-center gap-x-2 text-xl'>
+                {/* <FaLocationDot className='text-3xl' /> */}
+                {trail.icon}
+                <div className='flex flex-col'>
+                  <span className='font-medium'>{trail.label}</span>
+                  <span className='col-start-2 text-base text-gray-600'>{trail.value}</span>
+                </div>
+              </div>
+            ))}
+
+            {/* Trail Overview */}
             <div className='flex flex-col gap-y-4 text-justify  lg:max-w-[740px]'>
               <span className='text-3xl font-semibold'>Overview</span>
               <span className='flex flex-col gap-y-4'>
@@ -146,12 +143,12 @@ export default function TrailPage() {
             </form>
           </div>
         </div>
-        {/* <div id='reviews' className='h-screen text-4xl'>
+        <div id='reviews' className='h-screen bg-red-100 text-4xl'>
           Reviews
         </div>
         <div>
           <span className='lg:text-4xl'>Related Trails</span>
-        </div> */}
+        </div>
       </div>
     </div>
   );

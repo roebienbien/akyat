@@ -5,9 +5,9 @@ import StarRating from '../StarRating';
 
 export default function CarouselSlides({ name, route, price, previewSrc, location, difficulty, rating }: ITrails) {
   return (
-    <div className='w-full min-w-0 flex-none  pl-4 sm:w-1/2 md:w-1/3 lg:h-[480px] lg:w-1/4 '>
-      {/* <div className='flex  flex-col lg:h-[400px]'> */}
-      <div className='flex  h-full flex-col '>
+    <div className='w-full min-w-0 flex-none   pl-4 sm:w-1/2 md:w-1/3 lg:w-1/4 '>
+      {/* Cards */}
+      <div className='flex  h-full flex-col rounded-lg bg-white '>
         <Link to={`trails${route}`} className='h-1/2'>
           <img src={previewSrc} alt='trail-preview' className='h-full w-full rounded-t-md object-cover ' />
         </Link>

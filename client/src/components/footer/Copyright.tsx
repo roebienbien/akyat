@@ -3,7 +3,7 @@ import roebienLogo from '../../assets/roebien-logo.svg';
 export default function Copyright() {
   const currentYear = new Date().getFullYear();
   return (
-    <div className=' flex w-full justify-between border-t-2 border-gray-400 bg-red-100 px-4  py-4  lg:px-40'>
+    <div className=' flex h-14 w-full items-center justify-between border-t  border-gray-400 px-4   lg:px-20'>
       <p className='text-xs md:text-base'>
         {`Copyright © ${currentYear}`} <span className='hidden md:inline'> Akyat(PHL) | All Right Reserved </span>
       </p>

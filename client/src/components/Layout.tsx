@@ -1,19 +1,25 @@
-import React, { useEffect } from 'react';
-import Navbar from './navbar/Navbar';
-import Footer from './footer/Footer';
 import { Outlet, useLocation } from 'react-router-dom';
-import AppPromotion from '../sections/app-promotion/AppPromotion';
-import Hero from '../sections/Hero';
-import Mountains from '../sections/mountains-section/Mountains';
-import Perks from '../sections/perks-section/Perks';
-import Testimonials from '../sections/testimonials/Testimonials';
-import Trails from '../sections/trails-section/Trails';
 import TrailsProvider from '../sections/trails-section/TrailsContext';
+import Footer from './footer/Footer';
+import Navbar from './navbar/Navbar';
 import ScrollToTop from './ScrollToTop';
+// import ScrollToHashElement from '@cascadia-code/scroll-to-hash-element';
+import ScrollToHashElement from '@cascadia-code/scroll-to-hash-element';
+import { useEffect } from 'react';
 
 function Layout() {
+  const { hash } = useLocation();
+  useEffect(() => {
+    if (hash) {
+      const targetElement = document.getElementById(hash.replace('#', ''));
+      // if (targetElement) {
+      // targetElement.scrollIntoView({ behavior: smooth });
+      // }
+    }
+  }, [hash]);
   return (
-    <div className='min-w-[320px] scroll-smooth bg-zinc-100 font-sans'>
+    <div className='min-w-[320px] scroll-smooth bg-zinc-50 font-sans'>
+      <ScrollToHashElement />
       <ScrollToTop />
       <Navbar />
       <TrailsProvider>

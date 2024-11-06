@@ -2,7 +2,7 @@ export const Navlinks = [
   {
     title: 'home',
     // src: '#hero',
-    src: '/',
+    src: '/#home',
   },
   {
     title: 'explore',
@@ -13,11 +13,11 @@ export const Navlinks = [
     src: '/trails',
   },
   {
-    title: 'Blogs',
-    src: '#blog',
+    title: 'FAQ',
+    src: '/#faq',
   },
   {
     title: 'About',
-    src: '#about',
+    src: '/#about',
   },
 ];
