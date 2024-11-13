@@ -5,12 +5,13 @@ import LoginForm from './components/ui/forms/LoginForm';
 import RegisterForm from './components/ui/forms/RegisterForm';
 import NotFoundPage from './pages/NotFoundPage';
 import AppPromotion from './sections/app-promotion/AppPromotion';
+import FAQSection from './sections/FAQ';
 import Hero from './sections/Hero';
 import Perks from './sections/perks-section/Perks';
 import Testimonials from './sections/testimonials/Testimonials';
 import TrailPage from './sections/trails-section/TrailPage';
 import Trails from './sections/trails-section/Trails';
-import FAQ from './sections/FAQ';
+import HomePage from './pages/HomePage';
 
 const router = createBrowserRouter([
   {
@@ -21,16 +22,17 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: (
-          <>
-            <ScrollToTop />
-            <Hero />
-            <Perks />
-            {/* <Services /> */}
-            <Trails />
-            <AppPromotion />
-            <Testimonials />
-            <FAQ />
-          </>
+          <HomePage />
+          // <>
+          //   <ScrollToTop />
+          //   <Hero />
+          //   <Perks />
+          //   {/* <Services /> */}
+          //   <Trails />
+          //   <AppPromotion />
+          //   <Testimonials />
+          //   <FAQSection />
+          // </>
         ),
       },
       {

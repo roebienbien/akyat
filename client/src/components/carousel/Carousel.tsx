@@ -57,12 +57,12 @@ export function Carousel() {
 
   return (
     <div className=''>
-      <div className='mb-2 flex gap-x-2'>
+      <div className='mb-2 flex'>
         {FilterButtons.map((button, index) => (
           <button
             key={index}
             onClick={() => setSelectedRelevancy(button.filter)}
-            className={`${selectedRelevancy === button.filter && 'text bg-gray-700 text-white'} mb-2  p-2 text-sm font-semibold hover:bg-gray-300  `}>
+            className={`${selectedRelevancy === button.filter && 'text bg-gray-700 text-white'} mb-2 w-20  border  border-gray-600 p-2 text-sm font-semibold hover:bg-gray-200 `}>
             {button.name}
           </button>
         ))}

@@ -59,15 +59,15 @@ export default function TrailPage() {
 
   return (
     <div className='mt-16 min-h-screen bg-gray-50 px-2  lg:p-10'>
-      <div className='mx-auto grid gap-y-4  lg:max-w-6xl'>
+      <div className='mx-auto grid gap-y-4 lg:max-w-6xl'>
         {/* Image Preview */}
-        <div className='grid grid-cols-2  gap-2'>
-          <img src={previewSrc} alt='trail-preview' className=' h-full rounded-lg bg-no-repeat object-cover' />
+        <div className='grid  h-[400px] grid-cols-2 gap-2 overflow-clip rounded-lg'>
+          <img src={previewSrc} alt='trail-preview' className=' h-full  bg-no-repeat object-cover' />
           <div className='grid h-full grid-cols-2 gap-2'>
             {Array(4)
               .fill(0)
               .map((_, index) => (
-                <img key={index} src={previewSrc} alt='trail-preview' className='h-full rounded-lg  object-cover' />
+                <img key={index} src={previewSrc} alt='trail-preview' className='h-full  object-cover' />
               ))}
           </div>
         </div>
@@ -140,7 +140,7 @@ export default function TrailPage() {
             </div>
           </div>
           {/* Floating Form */}
-          <div className='sticky top-0 z-50 h-fit max-w-3xl rounded-lg border border-gray-300 px-4 py-6 shadow-2xl'>
+          <div className='sticky top-0 z-10 h-fit max-w-3xl rounded-lg border border-gray-300 px-4 py-6 shadow-2xl'>
             <form onSubmit={handleSubmit} className='flex flex-col justify-items-center gap-y-4  px-2 '>
               <div className='flex flex-col'>
                 <span className='text-lg'>₱{price.toLocaleString()} / guest</span>

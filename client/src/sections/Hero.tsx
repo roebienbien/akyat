@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import heroGuy from '../assets/heroguy.jpg';
+import UnsplashImage from '../components/ui/UnsplashImage';
 
 export default function Hero() {
   return (
@@ -24,6 +25,7 @@ export default function Hero() {
           </Link>
         </div>
       </div>
+      <div></div>
     </div>
   );
 }
