@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 function useSlidesToScroll() {
   const [slidesToScroll, setSlidesToScroll] = useState(1);
@@ -18,8 +18,8 @@ function useSlidesToScroll() {
     };
 
     handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return slidesToScroll;

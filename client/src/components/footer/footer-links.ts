@@ -1,5 +1,5 @@
-import { IconType } from 'react-icons';
-import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa6';
+import { IconType } from "react-icons";
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa6";
 
 type TFooterLinks = {
   title: string;
@@ -14,68 +14,68 @@ export interface IFooterLinks {
 
 export const FooterLinksList: IFooterLinks[] = [
   {
-    title: 'Quick Links',
+    title: "Quick Links",
     links: [
       {
-        title: 'About Us',
-        src: 'https://example.com',
+        title: "About Us",
+        src: "https://example.com",
       },
       {
-        title: 'Services',
-        src: 'https://example.com',
+        title: "Services",
+        src: "https://example.com",
       },
       {
-        title: 'Sustainability',
-        src: 'https://example.com',
+        title: "Sustainability",
+        src: "https://example.com",
       },
       {
-        title: 'Services',
-        src: 'https://example.com',
+        title: "Services",
+        src: "https://example.com",
       },
       {
-        title: 'Blog',
-        src: 'https://example.com',
+        title: "Blog",
+        src: "https://example.com",
       },
       {
-        title: 'Contact',
-        src: 'https://example.com',
+        title: "Contact",
+        src: "https://example.com",
       },
     ],
   },
   {
-    title: 'Legals',
+    title: "Legals",
     links: [
       {
-        title: 'Private Policy',
-        src: 'https://example.com',
+        title: "Private Policy",
+        src: "https://example.com",
       },
       {
-        title: 'Cookies Policy',
-        src: 'https://example.com',
+        title: "Cookies Policy",
+        src: "https://example.com",
       },
       {
-        title: 'ECO',
-        src: 'https://example.com',
+        title: "ECO",
+        src: "https://example.com",
       },
     ],
   },
   {
-    title: 'Socials',
+    title: "Socials",
     links: [
       {
         icon: FaFacebook,
-        title: 'Facebook',
-        src: 'https://example.com',
+        title: "Facebook",
+        src: "https://example.com",
       },
       {
         icon: FaInstagram,
-        title: 'Instagram',
-        src: 'https://example.com',
+        title: "Instagram",
+        src: "https://example.com",
       },
       {
         icon: FaTwitter,
-        title: 'Twitter',
-        src: 'https://example.com',
+        title: "Twitter",
+        src: "https://example.com",
       },
     ],
   },

@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
-import { twMerge } from 'tailwind-merge';
+import React, { useState } from "react";
+import { twMerge } from "tailwind-merge";
 
-type Props = {
-  photoId: string;
-  alt: string;
-  quality?: number;
-  className?: string;
-};
-
-const UnsplashImage: React.FC<Props> = ({ photoId, alt, quality = 80, className }) => {
+const UnsplashImage: React.FC<Props> = ({
+  photoId,
+  alt,
+  quality = 80,
+  className,
+}) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   const placeholderUrl = `https://images.unsplash.com/photo-${photoId}?q=10&auto=format&fit=crop&ixlib=rb-4.0.3`;
@@ -26,23 +24,21 @@ const UnsplashImage: React.FC<Props> = ({ photoId, alt, quality = 80, className 
       src={isLoaded ? imageUrl : placeholderUrl}
       srcSet={isLoaded ? srcSet : undefined}
       alt={alt}
-      loading='lazy'
+      loading="lazy"
       onLoad={() => setIsLoaded(true)}
       className={twMerge(
-        `
-        mx-auto
-        object-cover
-        transition-opacity
-        duration-500
-        ease-in-out
-        ${isLoaded ? 'opacity-100' : 'opacity-0'}
-        lg:w-128 xl:w-160 h-auto w-full sm:w-64
-        md:w-96
-      `,
-        className
+        `mx-auto h-full w-full object-cover transition-opacity duration-500 ease-in-out ${isLoaded ? "opacity-100" : "opacity-0"} `,
+        className,
       )}
     />
   );
+};
+
+type Props = {
+  photoId: string;
+  alt: string;
+  quality?: number;
+  className?: string;
 };
 
 export default UnsplashImage;

@@ -1,23 +1,23 @@
 export const Navlinks = [
   {
-    title: 'home',
+    title: "home",
     // src: '#hero',
-    src: '/#home',
+    src: "/#home",
   },
   {
-    title: 'explore',
-    src: '#explore',
+    title: "explore",
+    src: "#explore",
   },
   {
-    title: 'trails',
-    src: '/trails',
+    title: "trails",
+    src: "/trails",
   },
   {
-    title: 'FAQ',
-    src: '/#faq',
+    title: "FAQ",
+    src: "/#faq",
   },
   {
-    title: 'About',
-    src: '/#about',
+    title: "About",
+    src: "/#about",
   },
 ];

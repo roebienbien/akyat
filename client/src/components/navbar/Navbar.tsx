@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import akyatLogo from '../../assets/akyat-logo.svg';
 import HamburgerButton from '../ui/HamburgerButton';
-import { Navlinks } from './navlinks';
 import { Link, NavLink } from 'react-router-dom';
+import { twMerge } from 'tailwind-merge';
 
-function Navbar() {
+function Navbar({ isSticky, className }: { isSticky: boolean; className?: string }) {
   // const [isOpen, setIsOpen] = useState(false);
   // const toggleMenu = () => {
   //   setIsOpen((prevState) => !prevState);
@@ -25,34 +25,62 @@ function Navbar() {
 
   return (
     <div
-      className={`${
-        isScrolled && 'bg-gray-50 text-black'
-      } duration-7000 fixed top-0 z-50 grid h-16 w-full border-b border-gray-300  bg-opacity-100 py-2 text-black transition-all  `}>
+      className={twMerge(
+        `${isScrolled && 'bg-gray-50 text-black'} ${
+          isSticky ? 'fixed' : 'border-b border-gray-300'
+        } duration-7000 top-0 z-50 grid h-16 w-full bg-opacity-100 py-2 text-black transition-all`,
+        className
+      )}>
       {/* <div className={`${isScrolled && 'bg-gray-50 text-black'} duration-7000 top-0 z-50 grid h-16 w-full border-b border-gray-400  bg-opacity-100 py-2 text-black transition-all  `}> */}
-      <div className='flex items-center justify-between  px-6 xs:px-10 lg:px-20 '>
+      <div className='flex items-center justify-between px-6 xs:px-10 lg:px-20'>
         {/* <span className='cursor-pointer text-lg font-bold  lg:text-3xl'>Akyat</span> */}
         <Link to='/'>
           <img src={akyatLogo} alt='akyat-logo' className='h-10 w-auto' />
         </Link>
-        <ul className='hidden items-center space-x-10 md:flex'>
+        <div className='hidden items-center space-x-10 md:flex'>
           {Navlinks.map((item, key) => (
-            <Link to={item.src} key={key} className='cursor-pointer  border-b-2 border-transparent capitalize  hover:border-black  lg:text-xl'>
+            <Link to={`/${item.to}`} key={key} className='cursor-pointer border-b-2 border-transparent capitalize hover:border-black lg:text-xl'>
               {item.title}
             </Link>
-            // <a href={item.src} key={key}>
-            //   {item.title}
-            // </a>
           ))}
-          <Link to={'/login'} className={`hidden  bg-green-600  px-8 py-2 text-white hover:bg-green-700 md:block lg:text-lg`}>
-            Login
-          </Link>
+          <div className='flex gap-x-4'>
+            <Link to={'/login'} className={`flex h-10 w-20 items-center justify-center text-white hover:bg-green-700 lg:text-lg`}>
+              Log in
+            </Link>
+            {/* <Link to={'/register'} className={`  text-green-600    text-white border  md:block lg:text-lg`}>
+              Sign up
+            </Link> */}
+          </div>
           {/* <button className={`hidden border border-black px-8 py-2  md:block lg:text-lg`}>Login</button> */}
-        </ul>
+        </div>
         {/* <HamburgerButton isOpen={isOpen} toggleMenu={toggleMenu} /> */}
         <HamburgerButton />
       </div>
     </div>
   );
 }
+
+export const Navlinks = [
+  {
+    title: 'home',
+    to: '#home',
+  },
+  {
+    title: 'explore',
+    to: '#explore',
+  },
+  {
+    title: 'trails',
+    to: 'trails',
+  },
+  {
+    title: 'FAQ',
+    to: '#faq',
+  },
+  {
+    title: 'About',
+    to: '#about',
+  },
+];
 
 export default Navbar;
