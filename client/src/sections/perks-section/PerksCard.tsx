@@ -1,20 +1,15 @@
-import React from "react";
-import { TPerks } from "./perks-list";
+import { TPerks } from './perks-list';
 
 export default function PerksCard({ icon: Icon, perk, description }: TPerks) {
   return (
-    <li className="flex gap-x-2">
-      <div className="flex">
-        <div className="flex aspect-square h-8 items-center justify-center rounded-full bg-green-600 p-2 md:h-12 md:w-12">
-          <Icon className="fill-white text-sm  md:text-base lg:text-2xl" />
-        </div>
+    <div className="flex h-60 w-1/3 flex-col items-center justify-center gap-2 rounded-xl text-center shadow-xl">
+      <div className="flex aspect-square h-4 items-center justify-center rounded-full bg-green-600 p-2 md:h-12 md:w-12">
+        <Icon className="fill-white text-sm md:text-base lg:text-xl" />
       </div>
-      <div className="flex flex-col  text-start">
-        <span className="text-sm font-semibold lg:text-3xl">{perk}</span>
-        <p className=" text-xs text-gray-500 md:mt-2 md:text-base">
-          {description}
-        </p>
+      <div className="flex w-3/4 flex-col">
+        <span className="text-sm font-semibold lg:text-lg">{perk}</span>
+        <p className="text-xs text-gray-500 md:mt-2 lg:text-sm">{description}</p>
       </div>
-    </li>
+    </div>
   );
 }

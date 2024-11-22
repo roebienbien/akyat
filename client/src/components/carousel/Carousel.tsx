@@ -16,7 +16,19 @@ const filterByRelevancy = (trails: ITrails[], relevancy: filterType) => {
     imgAlt: 'img-alt',
     photos: [
       {
-        photoId: 'sample-id',
+        photoId: '1502085671122-2d218cd434e6',
+        imgAlt: 'photo-gallery',
+      },
+      {
+        photoId: '1502085671122-2d218cd434e6',
+        imgAlt: 'photo-gallery',
+      },
+      {
+        photoId: '1502085671122-2d218cd434e6',
+        imgAlt: 'photo-gallery',
+      },
+      {
+        photoId: '1502085671122-2d218cd434e6',
         imgAlt: 'photo-gallery',
       },
     ],
@@ -69,36 +81,39 @@ export function Carousel() {
 
   return (
     <div>
-      <div className='mb-2 flex'>
+      <div className="mb-2 flex">
         {FilterButtons.map((button, index) => (
           <button
             key={index}
             onClick={() => setSelectedRelevancy(button.filter)}
-            className={`${selectedRelevancy === button.filter && 'text bg-gray-700 text-white'} mb-2 w-20 border border-gray-300 p-2 text-sm font-semibold hover:bg-gray-200`}>
+            className={`${selectedRelevancy === button.filter && 'bg-gray-700 text-white hover:bg-gray-700'} mb-2 w-20 border border-gray-300 p-2 text-sm font-semibold hover:bg-gray-200`}
+          >
             {button.name}
           </button>
         ))}
       </div>
-      <div className='relative mx-auto w-full'>
-        <div ref={emblaRef} className='overflow-hidden'>
-          <div className='-ml-4 flex'>
+      <div className="relative mx-auto w-full">
+        <div ref={emblaRef} className="overflow-hidden">
+          <div className="-ml-4 flex">
             {FilteredTrails.map((trail, index) => (
               <CarouselSlides key={index} {...trail} />
             ))}
           </div>
         </div>
-        <div className='absolute top-1/2 z-50 flex w-full -translate-y-1/2 justify-between'>
+        <div className="absolute top-1/2 z-50 flex w-full -translate-y-1/2 justify-between">
           <button
             onClick={() => handleScroll('prev')}
             disabled={currentIndex === 0}
-            className='-ml-4 flex h-10 w-10 items-center rounded-full bg-gray-800 p-4 shadow-md disabled:opacity-0 sm:-ml-6 sm:h-12 sm:w-12'>
-            <FaChevronLeft className='fill-white' />
+            className="-ml-4 flex h-10 w-10 items-center rounded-full bg-gray-800 p-4 shadow-md disabled:opacity-0 sm:-ml-6 sm:h-12 sm:w-12"
+          >
+            <FaChevronLeft className="fill-white" />
           </button>
           <button
             onClick={() => handleScroll('next')}
             disabled={currentIndex === totalScroll}
-            className='-mr-4 flex h-10 w-10 items-center rounded-full bg-gray-800 p-4 shadow-md disabled:opacity-0 sm:-mr-6 sm:h-12 sm:w-12'>
-            <FaChevronRight className='fill-white' />
+            className="-mr-4 flex h-10 w-10 items-center rounded-full bg-gray-800 p-4 shadow-md disabled:opacity-0 sm:-mr-6 sm:h-12 sm:w-12"
+          >
+            <FaChevronRight className="fill-white" />
           </button>
         </div>
       </div>
