@@ -3,6 +3,7 @@ const Trails: ITrails[] = [
     name: 'Spartan Trail',
     route: 'spartanTrail',
     price: 1999,
+    hostImage: '1564564321837-a57b7070ac4f',
     photoId: '1665393717307-e3381c7eba02',
     photos: [
       { photoId: '1665393717338-dd07628bf667', imgAlt: '' },
@@ -25,6 +26,7 @@ const Trails: ITrails[] = [
     name: 'Mount Pulag',
     route: 'pulag',
     price: 1999,
+    hostImage: '1564564321837-a57b7070ac4f',
     photoId: '1595248588362-18a894e156d1',
     photos: [
       { photoId: '1595248612282-d52828c11810', imgAlt: '' },
@@ -47,6 +49,7 @@ const Trails: ITrails[] = [
     name: 'Mount Batulao',
     route: 'batulao',
     price: 1999,
+    hostImage: '1564564321837-a57b7070ac4f',
     photoId: '1560200772-52bc93e342cb',
     photos: [
       { photoId: '1665393717338-dd07628bf667', imgAlt: '' },
@@ -69,6 +72,7 @@ const Trails: ITrails[] = [
     name: 'Mount Ulap',
     route: 'ulap',
     price: 599,
+    hostImage: '1564564321837-a57b7070ac4f',
     photoId: '1629401681628-a37c83eb57d9',
     photos: [
       { photoId: '1595248612282-d52828c11810', imgAlt: '' },
@@ -91,6 +95,7 @@ const Trails: ITrails[] = [
     name: 'Mount Pinatubo',
     route: 'pinatubo',
     price: 599,
+    hostImage: '1564564321837-a57b7070ac4f',
     photoId: '1663524962794-545535854ff7',
     photos: [
       { photoId: '1665393717359-2aa387fcb4a2', imgAlt: '' },
@@ -113,6 +118,7 @@ const Trails: ITrails[] = [
     name: 'Mount Tapyas',
     route: 'tapya',
     price: 399,
+    hostImage: '1564564321837-a57b7070ac4f',
     photoId: '1663524963912-2d360265e5f8',
     photos: [
       { photoId: '1595248612282-d52828c11810', imgAlt: '' },
@@ -135,6 +141,7 @@ const Trails: ITrails[] = [
     name: 'Mount Guiting-Guiting',
     route: 'guiting-guiting',
     price: 499,
+    hostImage: '1564564321837-a57b7070ac4f',
     photoId: '1663524962567-a584dd70450c',
     photos: [
       { photoId: '1665393717359-2aa387fcb4a2', imgAlt: '' },
@@ -157,6 +164,7 @@ const Trails: ITrails[] = [
     name: 'Mount Apo',
     route: 'apo',
     price: 699,
+    hostImage: '1564564321837-a57b7070ac4f',
     photoId: '1698862338833-8a70583d1f79',
     photos: [
       { photoId: '1665393717359-2aa387fcb4a2', imgAlt: '' },
@@ -179,6 +187,7 @@ const Trails: ITrails[] = [
     name: 'Mount Makiling',
     route: 'makiling',
     price: 799,
+    hostImage: '1564564321837-a57b7070ac4f',
     photoId: '1663524963903-b237eee642cf',
     photos: [
       { photoId: '1665393717359-2aa387fcb4a2', imgAlt: '' },
@@ -201,6 +210,7 @@ const Trails: ITrails[] = [
     name: 'Mount Daraitan',
     route: 'daraitan',
     price: 799,
+    hostImage: '1564564321837-a57b7070ac4f',
     photoId: '1598608718918-b44f0d66e325',
     photos: [
       { photoId: '1665393717359-2aa387fcb4a2', imgAlt: '' },
@@ -237,6 +247,7 @@ export interface ITrails {
   name: string;
   route: string;
   price: number;
+  hostImage: string;
   photoId: string;
   photos: { photoId: string; imgAlt: string }[];
   imgAlt: string;

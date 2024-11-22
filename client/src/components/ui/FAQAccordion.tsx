@@ -1,4 +1,4 @@
-import { FaPlus } from "react-icons/fa6";
+import { FaPlus } from 'react-icons/fa6';
 
 type Props = {
   isOpen: boolean;
@@ -11,24 +11,22 @@ function FAQAccordion({ isOpen, onToggle, question, answer }: Props) {
   return (
     <button
       onClick={onToggle}
-      className={`group flex w-full max-w-5xl  flex-col items-center justify-between border border-gray-200 px-4 py-6 text-xs transition-colors ${isOpen ? "" : "bg-gray-100"}`}
+      className={`group flex w-full max-w-5xl flex-col items-center justify-between border border-gray-200 px-4 py-6 text-xs transition-colors ${isOpen ? 'bg-white' : ''}`}
     >
-      <div className="flex w-full items-center justify-between">
-        <span className="text-xl font-semibold">{question}</span>
+      <div className="flex w-full items-center justify-between text-start">
+        <span className="text-sm font-semibold md:text-xl">{question}</span>
         <span
-          className={`transform text-xl text-gray-400 transition-transform group-hover:text-black  ${isOpen ? "rotate-45" : "rotate-0"}`}
+          className={`transform text-sm text-gray-400 transition-transform group-hover:text-black md:text-xl ${isOpen ? 'rotate-45' : 'rotate-0'}`}
         >
           <FaPlus />
         </span>
       </div>
       <div
-        className={`grid w-full justify-items-start overflow-hidden  text-base transition-all duration-300 ease-in-out ${
-          isOpen
-            ? "mt-4 grid-rows-[1fr]  opacity-100"
-            : "grid-rows-[0fr] opacity-0"
+        className={`grid w-full justify-items-start overflow-hidden text-sm transition-all duration-300 ease-in-out md:text-base ${
+          isOpen ? 'mt-4 grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
         }`}
       >
-        <div className="flex flex-col justify-items-start overflow-hidden  ">
+        <div className="flex flex-col justify-items-start overflow-hidden">
           <span className="text-start">{answer}</span>
         </div>
       </div>

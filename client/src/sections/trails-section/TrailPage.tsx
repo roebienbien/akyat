@@ -45,7 +45,7 @@ export default function TrailPage() {
 
   if (!trail) return <div className="text-red-500">Error: Trail Not Found</div>;
 
-  const { name, price, photoId, imgAlt, photos, location, elevation, duration, length, trailType, difficulty, rating, relevancy } = trail;
+  const { name, price, hostImage, photoId, imgAlt, photos, location, elevation, duration, length, trailType, difficulty, rating, relevancy } = trail;
   const formattedDuration = convertToHoursAndMinutes(duration);
 
   const TrailInfo = [
@@ -69,11 +69,6 @@ export default function TrailPage() {
         <div className="grid h-[400px] grid-cols-2 gap-2 overflow-clip rounded-lg">
           <UnsplashImage photoId={photoId} alt={imgAlt} />
           <div className="grid h-full grid-cols-2 gap-2">
-            {/* {Array(4)
-              .fill(0)
-              .map((_, index) => (
-                <UnsplashImage key={index} photoId={photoId} alt={imgAlt} />
-              ))} */}
             {photos.map((photo, index) => (
               <UnsplashImage photoId={photo.photoId} alt={'galleries'} key={index} />
             ))}
@@ -97,7 +92,8 @@ export default function TrailPage() {
             {/* Trail Coordinator */}
             <div className="flex items-center gap-x-6 border-b border-t border-gray-400">
               <div>
-                <img src={kelly} alt="coordinator-avatar" className="h-12 w-12 rounded-full object-cover" />
+                {/* <img src={kelly} alt="coordinator-avatar" className="h-12 w-12 rounded-full object-cover" /> */}
+                <UnsplashImage photoId={hostImage} alt={'hiking-coordinator'} className="h-12 w-12 rounded-full object-cover" />
               </div>
               <div className="flex flex-col py-4">
                 <span className="text-xl font-medium">Kelly Smith</span>

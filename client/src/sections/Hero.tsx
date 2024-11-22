@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import heroGuy from "../assets/heroguy.jpg";
+import { Link } from 'react-router-dom';
+import heroGuy from '../assets/heroguy.jpg';
 
 export default function Hero() {
   return (
@@ -10,7 +10,7 @@ export default function Hero() {
       }}
       className="mx-auto h-[100dvh] bg-cover bg-no-repeat px-6"
     >
-      <div className="flex h-full flex-col justify-center justify-items-start gap-y-4 md:text-start lg:gap-y-8 lg:px-10">
+      <div className="flex h-full flex-col justify-center justify-items-start gap-y-4 text-center md:text-start lg:gap-y-8 lg:px-10">
         <h1 className="w-full text-2xl font-bold xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
           Explore <br className="hidden md:block" /> the mountains
           <br className="hidden md:block" /> of the Philippines

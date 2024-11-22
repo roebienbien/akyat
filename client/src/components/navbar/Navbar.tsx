@@ -1,15 +1,10 @@
-import { useEffect, useState } from "react";
-import akyatLogo from "../../assets/akyat-logo.svg";
-import HamburgerButton from "../ui/HamburgerButton";
-import { Link, NavLink } from "react-router-dom";
-import { twMerge } from "tailwind-merge";
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { twMerge } from 'tailwind-merge';
+import akyatLogo from '../../assets/akyat-logo.svg';
+import HamburgerButton from '../ui/HamburgerButton';
 
 function Navbar({ isSticky, className }: { isSticky: boolean; className?: string }) {
-  // const [isOpen, setIsOpen] = useState(false);
-  // const toggleMenu = () => {
-  //   setIsOpen((prevState) => !prevState);
-  // };
-
   // Change navbarColorOnScroll function
   const [isScrolled, setIsScrolled] = useState(false);
   const changeNavBackground = () => {
@@ -17,19 +12,19 @@ function Navbar({ isSticky, className }: { isSticky: boolean; className?: string
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", changeNavBackground);
+    window.addEventListener('scroll', changeNavBackground);
     return () => {
-      window.removeEventListener("scroll", changeNavBackground);
+      window.removeEventListener('scroll', changeNavBackground);
     };
   }, []);
 
   return (
     <div
       className={twMerge(
-        `${isScrolled && "bg-gray-50 text-black"} ${
-          isSticky ? "fixed" : "border-b border-gray-300"
+        `${isScrolled && 'bg-gray-50 text-black'} ${
+          isSticky ? 'fixed' : 'border-b border-gray-300'
         } duration-7000 top-0 z-50 grid h-16 w-full bg-opacity-100 py-2 text-black transition-all`,
-        className,
+        className
       )}
     >
       {/* <div className={`${isScrolled && 'bg-gray-50 text-black'} duration-7000 top-0 z-50 grid h-16 w-full border-b border-gray-400  bg-opacity-100 py-2 text-black transition-all  `}> */}
@@ -43,20 +38,20 @@ function Navbar({ isSticky, className }: { isSticky: boolean; className?: string
             <Link
               to={`/${item.to}`}
               key={key}
-              className="cursor-pointer border-b-2 border-transparent font-semibold capitalize hover:border-black lg:text-base"
+              className="cursor-pointer border-b-2 border-transparent font-semibold capitalize hover:border-black lg:text-lg"
             >
               {item.title}
             </Link>
           ))}
           <div className="flex gap-x-4">
             <Link
-              to={"/login"}
+              to={'/login'}
               className="flex h-10 w-20 items-center justify-center border border-black font-semibold text-black hover:bg-gray-200 lg:text-base"
             >
               Log in
             </Link>
             <Link
-              to={"/register"}
+              to={'/register'}
               className="flex h-10 w-20 items-center justify-center border bg-green-600 font-semibold text-white hover:bg-green-700 lg:text-base"
             >
               Sign up
@@ -73,24 +68,24 @@ function Navbar({ isSticky, className }: { isSticky: boolean; className?: string
 
 export const Navlinks = [
   {
-    title: "home",
-    to: "#home",
+    title: 'home',
+    to: '#home',
   },
   {
-    title: "explore",
-    to: "#explore",
+    title: 'explore',
+    to: '#explore',
   },
   {
-    title: "trails",
-    to: "trails",
+    title: 'trails',
+    to: 'trails',
   },
   {
-    title: "FAQ",
-    to: "#faq",
+    title: 'FAQ',
+    to: '#faq',
   },
   {
-    title: "About",
-    to: "#about",
+    title: 'About',
+    to: '#about',
   },
 ];
 

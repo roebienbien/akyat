@@ -12,6 +12,7 @@ const filterByRelevancy = (trails: ITrails[], relevancy: filterType) => {
     name: 'More Trail Coming',
     price: 0,
     route: 'defaultRoute',
+    hostImage: '1564564321837-a57b7070ac4f',
     photoId: '1502085671122-2d218cd434e6',
     imgAlt: 'img-alt',
     photos: [
@@ -92,7 +93,7 @@ export function Carousel() {
           </button>
         ))}
       </div>
-      <div className="relative mx-auto w-full">
+      <div className="relative mx-auto w-11/12 md:w-full">
         <div ref={emblaRef} className="overflow-hidden">
           <div className="-ml-4 flex">
             {FilteredTrails.map((trail, index) => (

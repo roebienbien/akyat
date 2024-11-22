@@ -5,7 +5,7 @@ import FooterLinks from './FooterLinks';
 
 export default function Footer() {
   return (
-    <footer className="relative h-[600px] bg-zinc-800 text-white">
+    <footer className="relative min-h-[700px] bg-zinc-800 text-white">
       <div className="flex flex-col px-2 py-8 xs:px-4 sm:px-10 md:px-20 lg:flex-row lg:justify-between lg:space-x-20">
         <div className="max-w-lg text-left lg:max-w-2xl">
           <h3 className="text-2xl font-bold md:text-5xl">Akyat</h3>
@@ -33,7 +33,7 @@ export default function Footer() {
         </div>
 
         {/* Large Devices FooterLinks */}
-        <div className="mt-8 hidden space-x-14 lg:flex">
+        <div className="mt-8 hidden space-x-14 md:flex">
           {FooterLinksList.map((items, key) => (
             <FooterLinks key={key} {...items} />
           ))}
