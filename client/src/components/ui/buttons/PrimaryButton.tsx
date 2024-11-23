@@ -1,4 +1,4 @@
-import { twMerge } from "tailwind-merge";
+import { twMerge } from 'tailwind-merge';
 interface IProps {
   className?: string;
   text: string;
@@ -10,10 +10,7 @@ const PrimaryButton = ({ className, text, disabled, onClick }: IProps) => {
     <button
       onClick={onClick}
       disabled={disabled}
-      className={twMerge(
-        "w-fit rounded bg-blue-400 px-4 py-4 text-white disabled:opacity-75",
-        className,
-      )}
+      className={twMerge('w-fit rounded bg-green-600 px-4 py-4 text-white disabled:opacity-75', className)}
     >
       {text}
     </button>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { twMerge } from 'tailwind-merge';
 import akyatLogo from '../../assets/akyat-logo.svg';
 import HamburgerButton from '../ui/HamburgerButton';
+import SearchBar from './SearchBar';
 
 function Navbar({ isSticky, className }: { isSticky: boolean; className?: string }) {
   // Change navbarColorOnScroll function
@@ -21,7 +22,7 @@ function Navbar({ isSticky, className }: { isSticky: boolean; className?: string
   return (
     <div
       className={twMerge(
-        `${isScrolled && 'bg-gray-50 text-black'} ${
+        `${isScrolled && 'bg-white text-black'} ${
           isSticky ? 'fixed' : 'border-b border-gray-300'
         } duration-7000 top-0 z-50 grid h-16 w-full bg-opacity-100 py-2 text-black transition-all`,
         className
@@ -33,13 +34,10 @@ function Navbar({ isSticky, className }: { isSticky: boolean; className?: string
         <Link to="/#home">
           <img src={akyatLogo} alt="akyat-logo" className="h-10 w-auto" />
         </Link>
+        <SearchBar />
         <div className="hidden items-center space-x-10 md:flex">
           {Navlinks.map((item, key) => (
-            <Link
-              to={`/${item.to}`}
-              key={key}
-              className="cursor-pointer border-b-2 border-transparent font-semibold capitalize hover:border-black lg:text-lg"
-            >
+            <Link to={`/${item.to}`} key={key} className="cursor-pointer border-b-2 border-transparent hover:border-black lg:text-base">
               {item.title}
             </Link>
           ))}
@@ -68,24 +66,12 @@ function Navbar({ isSticky, className }: { isSticky: boolean; className?: string
 
 export const Navlinks = [
   {
-    title: 'home',
-    to: '#home',
-  },
-  {
-    title: 'explore',
-    to: '#explore',
-  },
-  {
-    title: 'trails',
+    title: 'Book Trail',
     to: 'trails',
   },
   {
-    title: 'FAQ',
-    to: '#faq',
-  },
-  {
-    title: 'About',
-    to: '#about',
+    title: 'Host Trail',
+    to: 'host',
   },
 ];
 

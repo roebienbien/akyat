@@ -1,12 +1,7 @@
-import React, { useState } from "react";
-import { twMerge } from "tailwind-merge";
+import React, { useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 
-const UnsplashImage: React.FC<Props> = ({
-  photoId,
-  alt,
-  quality = 80,
-  className,
-}) => {
+const UnsplashImage: React.FC<Props> = ({ photoId, alt, quality = 80, className }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   const placeholderUrl = `https://images.unsplash.com/photo-${photoId}?q=10&auto=format&fit=crop&ixlib=rb-4.0.3`;
@@ -14,9 +9,10 @@ const UnsplashImage: React.FC<Props> = ({
 
   // Setting up the srcSet for responsive images
   const srcSet = `
-    https://images.unsplash.com/photo-${photoId}?q=${quality}&w=400 400w,
-    https://images.unsplash.com/photo-${photoId}?q=${quality}&w=800 800w,
-    https://images.unsplash.com/photo-${photoId}?q=${quality}&w=1200 1200w
+    https://images.unsplash.com/photo-${photoId}?q=${quality}&w=640 640w,
+    https://images.unsplash.com/photo-${photoId}?q=${quality}&w=1024 1024w,
+    https://images.unsplash.com/photo-${photoId}?q=${quality}&w=1600 1600w,
+    https://images.unsplash.com/photo-${photoId}?q=${quality}&w=2048 2048w
   `;
 
   return (
@@ -27,8 +23,8 @@ const UnsplashImage: React.FC<Props> = ({
       loading="lazy"
       onLoad={() => setIsLoaded(true)}
       className={twMerge(
-        `mx-auto h-full w-full object-cover transition-opacity duration-500 ease-in-out ${isLoaded ? "opacity-100" : "opacity-0"} `,
-        className,
+        `mx-auto h-full w-full object-cover transition-opacity duration-500 ease-in-out ${isLoaded ? 'opacity-100' : 'opacity-0'} `,
+        className
       )}
     />
   );
