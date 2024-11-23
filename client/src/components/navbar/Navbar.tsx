@@ -30,7 +30,7 @@ function Navbar({ isSticky, className }: { isSticky: boolean; className?: string
       {/* <div className={`${isScrolled && 'bg-gray-50 text-black'} duration-7000 top-0 z-50 grid h-16 w-full border-b border-gray-400  bg-opacity-100 py-2 text-black transition-all  `}> */}
       <div className="flex items-center justify-between px-6 xs:px-10 lg:px-20">
         {/* <span className='cursor-pointer text-lg font-bold  lg:text-3xl'>Akyat</span> */}
-        <Link to="/">
+        <Link to="/#home">
           <img src={akyatLogo} alt="akyat-logo" className="h-10 w-auto" />
         </Link>
         <div className="hidden items-center space-x-10 md:flex">
