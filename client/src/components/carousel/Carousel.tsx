@@ -5,6 +5,7 @@ import heroGuy from '../../assets/heroguy.jpg';
 import Trails, { ITrails } from '../../sections/trails-section/trail-list';
 import CarouselSlides from './CarouselSlides';
 import useSlidesToScroll from '../../hooks/useSlidesToScroll';
+import { Link } from 'react-router-dom';
 
 const filterByRelevancy = (trails: ITrails[], relevancy: filterType) => {
   const filteredTrails = relevancy && relevancy !== 'all' ? trails.filter((trail) => trail.relevancy === relevancy) : trails;

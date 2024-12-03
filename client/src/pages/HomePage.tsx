@@ -1,4 +1,5 @@
 import ScrollToTop from '../components/ScrollToTop';
+import AkyatStatistics from '../sections/AkyatStatistics';
 import AppPromotion from '../sections/app-promotion/AppPromotion';
 import FAQSection from '../sections/FAQ';
 import Hero from '../sections/Hero';
@@ -13,6 +14,7 @@ const HomePageSections = [
   Perks,
   AppPromotion,
   Testimonials,
+  AkyatStatistics,
   FAQSection,
 ];
 

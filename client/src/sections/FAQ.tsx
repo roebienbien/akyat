@@ -2,12 +2,12 @@ import { useState } from 'react';
 import FAQAccordion from '../components/ui/FAQAccordion';
 import UnsplashImage from '../components/ui/UnsplashImage';
 
-type TFAQ = {
+type TFaq = {
   question: string;
   answer: string;
 };
 
-const FAQQuestions = [
+const FAQQuestions: TFaq[] = [
   {
     question: 'How do I book a hiking tour?',
     answer:

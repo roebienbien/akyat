@@ -37,7 +37,7 @@ function Navbar({ isSticky, className }: { isSticky: boolean; className?: string
         <SearchBar />
         <div className="hidden items-center space-x-10 md:flex">
           {Navlinks.map((item, key) => (
-            <Link to={`/${item.to}`} key={key} className="cursor-pointer border-b-2 border-transparent hover:border-black lg:text-base">
+            <Link to={`/${item.to}`} key={key} className="cursor-pointer border-b-2 border-transparent font-semibold hover:border-black lg:text-base">
               {item.title}
             </Link>
           ))}

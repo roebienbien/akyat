@@ -8,7 +8,7 @@ export default function CarouselSlides({ name, route, price, photoId, imgAlt, lo
   return (
     <div className="w-full min-w-0 flex-none pl-4 sm:w-1/2 md:w-1/3 lg:w-1/4">
       {/* Cards */}
-      <div className="flex h-full flex-col overflow-clip rounded-lg border border-gray-300">
+      <div className="flex h-full scale-100 flex-col overflow-clip rounded-lg border border-gray-300 duration-300">
         <Link to={`trails${route}`} className="h-[180px] lg:h-[240px]">
           <UnsplashImage photoId={photoId} alt={imgAlt} />
         </Link>
@@ -22,7 +22,7 @@ export default function CarouselSlides({ name, route, price, photoId, imgAlt, lo
             <StarRating value={rating} size="small" />
           </span>
           <div className="mt-auto w-full">
-            <Link to={`/trails/${route}`} className="flex w-full justify-center rounded bg-green-600 px-4 py-2 text-white">
+            <Link to={`/trails/${route}`} className="flex w-full justify-center rounded bg-green-600 px-4 py-2 text-white hover:bg-green-700">
               Book now
             </Link>
           </div>
