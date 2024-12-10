@@ -6,12 +6,21 @@ import heroGuy1 from '../assets/heroguy1.jpg';
 import { useEffect, useState } from 'react';
 
 export default function Hero() {
-  const [heroImage, setHeroImage] = useState(heroGuy20);
+  const [heroImage, setHeroImage] = useState(heroGuy1);
 
   useEffect(() => {
-    const img = new Image();
-    img.src = heroGuy;
-    img.onload = () => setHeroImage(heroGuy);
+    // Preload med qual image
+    const mediumImage = new Image();
+    mediumImage.src = heroGuy50;
+    mediumImage.onload = () => {
+      setHeroImage(heroGuy);
+
+      // Preload high qual image
+
+      const highImage = new Image();
+      highImage.src = heroGuy;
+      highImage.onload = () => setHeroImage(heroGuy);
+    };
   }, []);
 
   return (
