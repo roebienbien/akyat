@@ -13,7 +13,7 @@ export default function Hero() {
     const mediumImage = new Image();
     mediumImage.src = heroGuy50;
     mediumImage.onload = () => {
-      setHeroImage(heroGuy);
+      setHeroImage(heroGuy50);
 
       // Preload high qual image
 
