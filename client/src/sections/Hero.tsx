@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import heroGuy from '../assets/heroguy.jpg';
+import heroGuy50 from '../assets/heroguy50.jpg';
 import UnsplashImage from '../components/ui/UnsplashImage';
 import { useState } from 'react';
 
@@ -38,7 +39,9 @@ export default function Hero() {
     <div
       id="home"
       style={{
-        backgroundImage: `url(${heroGuy})`,
+        // backgroundImage: `url(${heroGuy50}), url(${heroGuy})`,
+        backgroundImage: `url(${heroGuy}), url(${heroGuy50})`,
+        // backgroundImage: `url(${heroGuy})`,
       }}
       className="mx-auto h-[100dvh] bg-cover bg-no-repeat px-6"
     >
