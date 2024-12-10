@@ -3,7 +3,6 @@ import useEmblaCarousel from 'embla-carousel-react';
 import CarouselSlides from '../../components/carousel/CarouselSlides';
 import UnsplashImage from '../../components/ui/UnsplashImage';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
-import useNonDraggableEmblaCarousel from '../../hooks/useNonDraggableEmblaCarousel';
 
 type THost = {
   name: string;
