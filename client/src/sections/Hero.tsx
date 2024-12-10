@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import heroGuy from '../assets/heroguy.jpg';
 import heroGuy50 from '../assets/heroguy50.jpg';
 import heroGuy20 from '../assets/heroguy20.jpg';
+import heroGuy1 from '../assets/heroguy1.jpg';
 import { useState } from 'react';
 
 export default function Hero() {
@@ -10,7 +11,7 @@ export default function Hero() {
       id="home"
       style={{
         // backgroundImage: `url(${heroGuy50}), url(${heroGuy})`,
-        backgroundImage: `url(${heroGuy}), url(${heroGuy50}), url(${heroGuy20})`,
+        backgroundImage: `url(${heroGuy}), url(${heroGuy50}), url(${heroGuy20}), url(${heroGuy1})`,
         // backgroundImage: `url(${heroGuy})`,
       }}
       className="mx-auto h-[100dvh] bg-cover bg-no-repeat px-6"
