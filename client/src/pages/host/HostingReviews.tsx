@@ -57,7 +57,7 @@ const HostingReviews = () => {
   );
 
   return (
-    <div className="flex h-screen flex-col items-center justify-center gap-y-12">
+    <div className="flex h-screen flex-col items-center justify-center gap-y-12 bg-gray-100">
       <h3 className="text-4xl font-bold">What Akyat's Hiking Coordinators have experienced.</h3>
       <div className="relative mx-auto w-9/12">
         {/* Carousel */}

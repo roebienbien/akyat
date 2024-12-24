@@ -4,6 +4,7 @@ import PrimaryButton from '../../components/ui/buttons/PrimaryButton';
 import HostingBenefits from './HostingBenefits';
 import HostingGuide, { TTabLinks } from './HostingGuide';
 import HostingReviews from './HostingReviews';
+import AkyatStatistics from '../../sections/AkyatStatistics';
 
 const TabLinks: TTabLinks[] = [
   {
@@ -43,10 +44,12 @@ const HostPage = () => {
           <PrimaryButton text={'Get started'} className="mt-6 w-full rounded-none font-semibold lg:text-xl" />
         </div>
       </div>
+
       <HostingBenefits />
+      <AkyatStatistics />
       <HostingGuide tabs={TabLinks} />
       <HostingReviews />
-      <div className="bg-gray-200 p-36">
+      <div className="p-36">
         <div className="mx-auto flex max-w-4xl flex-col items-center gap-y-4 text-center">
           <h3 className="text-4xl font-semibold">Become a hiking coordinator today </h3>
           <span className="max-w-lg text-lg">

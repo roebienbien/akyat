@@ -18,6 +18,8 @@
     "@mui/styled-engine-sc": "^6.1.6",
     "@types/react-lazy-load-image-component": "^1.6.4",
     "axios": "^1.7.7",
+    "embla-carousel": "^8.5.1",
+    "embla-carousel-autoplay": "^8.5.1",
     "embla-carousel-react": "^8.3.0",
     "react": "^18.2.0",
     "react-datepicker": "^7.5.0",

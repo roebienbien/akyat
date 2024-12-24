@@ -1,3 +1,38 @@
+type TReviews = {
+  userName: string;
+  img: string;
+  comment: string;
+  rate: number;
+  ratedDate: string;
+  registeredAt: number;
+};
+export interface ITrails {
+  name: string;
+  route: string;
+  price: number;
+  hostImage: string;
+  photoId: string;
+  photos: { photoId: string; imgAlt: string }[];
+  imgAlt: string;
+  location: string;
+  elevation: string; //Elevation gain:
+  duration: number;
+  length: string;
+  trailType: string;
+  difficulty: string;
+  rating: number;
+  description: string;
+  relevancy: string;
+  reviews: TReviews[];
+}
+
+const today = new Date();
+const formattedDate = today.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
 const Trails: ITrails[] = [
   {
     name: 'Spartan Trail',
@@ -18,9 +53,60 @@ const Trails: ITrails[] = [
     length: '5.5', //km
     trailType: 'Point to Point',
     difficulty: 'beginner',
-    rating: 4,
+    rating: 0,
     description: 'Loremloremloremlorem',
     relevancy: 'new',
+    reviews: [
+      {
+        userName: 'Magnus',
+        img: '1579038773867-044c48829161',
+        comment:
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quis ex quisquam vel eius maxime error neque excepturi atque facere. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat est debitis labore deleniti unde voluptatibus aliquid iste illum nemo praesentium?',
+        rate: 4,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+      {
+        userName: 'Carlsen',
+        img: '1579038773867-044c48829161',
+        comment: 'bad',
+        rate: 3,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+      {
+        userName: 'Carlsen',
+        img: '1579038773867-044c48829161',
+        comment: 'bad',
+        rate: 2,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+      {
+        userName: 'Magnus',
+        img: '1579038773867-044c48829161',
+        comment: 'good',
+        rate: 4,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+      {
+        userName: 'Carlsen',
+        img: '1579038773867-044c48829161',
+        comment: 'bad',
+        rate: 3,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+      {
+        userName: 'Carlsen',
+        img: '1579038773867-044c48829161',
+        comment: 'bad',
+        rate: 2,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+    ],
   },
   {
     name: 'Mount Pulag',
@@ -41,9 +127,35 @@ const Trails: ITrails[] = [
     length: '14.5',
     trailType: 'Out & back',
     difficulty: 'beginner',
-    rating: 3.9,
     description: '',
     relevancy: 'popular',
+    rating: 0,
+    reviews: [
+      {
+        userName: 'Magnus',
+        img: '1579038773867-044c48829161',
+        comment: 'good',
+        rate: 4,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+      {
+        userName: 'Carlsen',
+        img: '1579038773867-044c48829161',
+        comment: 'bad',
+        rate: 3,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+      {
+        userName: 'Carlsen',
+        img: '1579038773867-044c48829161',
+        comment: 'bad',
+        rate: 2,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+    ],
   },
   {
     name: 'Mount Batulao',
@@ -64,9 +176,35 @@ const Trails: ITrails[] = [
     length: '10.3km',
     trailType: 'Out & Back',
     difficulty: 'advanced',
-    rating: 3.7,
     description: '',
     relevancy: 'new',
+    rating: 0,
+    reviews: [
+      {
+        userName: 'Magnus',
+        img: '1579038773867-044c48829161',
+        comment: 'good',
+        rate: 4,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+      {
+        userName: 'Carlsen',
+        img: '1579038773867-044c48829161',
+        comment: 'bad',
+        rate: 3,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+      {
+        userName: 'Carlsen',
+        img: '1579038773867-044c48829161',
+        comment: 'bad',
+        rate: 2,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+    ],
   },
   {
     name: 'Mount Ulap',
@@ -87,9 +225,35 @@ const Trails: ITrails[] = [
     length: '7.9km',
     trailType: 'Point to Point',
     difficulty: 'advanced',
-    rating: 4.2,
     description: '',
     relevancy: 'popular',
+    rating: 0,
+    reviews: [
+      {
+        userName: 'Magnus',
+        img: '1579038773867-044c48829161',
+        comment: 'good',
+        rate: 4,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+      {
+        userName: 'Carlsen',
+        img: '1579038773867-044c48829161',
+        comment: 'bad',
+        rate: 3,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+      {
+        userName: 'Carlsen',
+        img: '1579038773867-044c48829161',
+        comment: 'bad',
+        rate: 2,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+    ],
   },
   {
     name: 'Mount Pinatubo',
@@ -110,9 +274,35 @@ const Trails: ITrails[] = [
     length: '11.1km',
     trailType: 'Out & Back',
     difficulty: 'intermediate',
-    rating: 4.5,
     description: '',
     relevancy: 'new',
+    rating: 0,
+    reviews: [
+      {
+        userName: 'Magnus',
+        img: '1579038773867-044c48829161',
+        comment: 'good',
+        rate: 4,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+      {
+        userName: 'Carlsen',
+        img: '1579038773867-044c48829161',
+        comment: 'bad',
+        rate: 3,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+      {
+        userName: 'Carlsen',
+        img: '1579038773867-044c48829161',
+        comment: 'bad',
+        rate: 2,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+    ],
   },
   {
     name: 'Mount Tapyas',
@@ -133,9 +323,35 @@ const Trails: ITrails[] = [
     length: '5.5km',
     trailType: 'Point to Point',
     difficulty: 'intermediate',
-    rating: 4.2,
     description: 'Loremloremloremlorem',
     relevancy: 'popular',
+    rating: 0,
+    reviews: [
+      {
+        userName: 'Magnus',
+        img: '1579038773867-044c48829161',
+        comment: 'good',
+        rate: 4,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+      {
+        userName: 'Carlsen',
+        img: '1579038773867-044c48829161',
+        comment: 'bad',
+        rate: 3,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+      {
+        userName: 'Carlsen',
+        img: '1579038773867-044c48829161',
+        comment: 'bad',
+        rate: 2,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+    ],
   },
   {
     name: 'Mount Guiting-Guiting',
@@ -156,9 +372,35 @@ const Trails: ITrails[] = [
     length: '14.5km',
     trailType: 'Out & back',
     difficulty: 'advanced',
-    rating: 3.9,
     description: '',
     relevancy: 'new',
+    rating: 0,
+    reviews: [
+      {
+        userName: 'Magnus',
+        img: '1579038773867-044c48829161',
+        comment: 'good',
+        rate: 4,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+      {
+        userName: 'Carlsen',
+        img: '1579038773867-044c48829161',
+        comment: 'bad',
+        rate: 3,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+      {
+        userName: 'Carlsen',
+        img: '1579038773867-044c48829161',
+        comment: 'bad',
+        rate: 2,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+    ],
   },
   {
     name: 'Mount Apo',
@@ -179,9 +421,35 @@ const Trails: ITrails[] = [
     length: '10.3km',
     trailType: 'Out & Back',
     difficulty: 'beginner',
-    rating: 3.7,
     description: '',
     relevancy: 'trending',
+    rating: 0,
+    reviews: [
+      {
+        userName: 'Magnus',
+        img: '1579038773867-044c48829161',
+        comment: 'good',
+        rate: 4,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+      {
+        userName: 'Carlsen',
+        img: '1579038773867-044c48829161',
+        comment: 'bad',
+        rate: 3,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+      {
+        userName: 'Carlsen',
+        img: '1579038773867-044c48829161',
+        comment: 'bad',
+        rate: 2,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+    ],
   },
   {
     name: 'Mount Makiling',
@@ -202,9 +470,35 @@ const Trails: ITrails[] = [
     length: '7.9',
     trailType: 'Point to Point',
     difficulty: 'beginner',
-    rating: 4.2,
     description: '',
     relevancy: 'popular',
+    rating: 0,
+    reviews: [
+      {
+        userName: 'Magnus',
+        img: '1579038773867-044c48829161',
+        comment: 'good',
+        rate: 4,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+      {
+        userName: 'Carlsen',
+        img: '1579038773867-044c48829161',
+        comment: 'bad',
+        rate: 3,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+      {
+        userName: 'Carlsen',
+        img: '1579038773867-044c48829161',
+        comment: 'bad',
+        rate: 2,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+    ],
   },
   {
     name: 'Mount Daraitan',
@@ -225,9 +519,36 @@ const Trails: ITrails[] = [
     length: '7.9',
     trailType: 'Point to Point',
     difficulty: 'beginner',
-    rating: 4.2,
     description: '',
     relevancy: 'popular',
+    rating: 0,
+    reviews: [
+      {
+        userName: 'Magnus',
+        img: '1579038773867-044c48829161',
+        comment:
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quis ex quisquam vel eius maxime error neque excepturi atque facere. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat est debitis labore deleniti unde voluptatibus aliquid iste illum nemo praesentium?',
+        rate: 4,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+      {
+        userName: 'Carlsen',
+        img: '1579038773867-044c48829161',
+        comment: 'bad',
+        rate: 3,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+      {
+        userName: 'Carlsen',
+        img: '1579038773867-044c48829161',
+        comment: 'bad',
+        rate: 2,
+        ratedDate: formattedDate,
+        registeredAt: 9,
+      },
+    ],
   },
   // {
   //   name: '',
@@ -243,24 +564,14 @@ const Trails: ITrails[] = [
   // },
 ];
 
-export interface ITrails {
-  name: string;
-  route: string;
-  price: number;
-  hostImage: string;
-  photoId: string;
-  photos: { photoId: string; imgAlt: string }[];
-  imgAlt: string;
-  location: string;
-  elevation: string; //Elevation gain:
-  duration: number;
-  length: string;
-  trailType: string;
-  difficulty: string;
-  rating: number;
-  description: string;
-  relevancy: string;
-  // Other TRAILS think about it
-}
+const averageRating = (reviews: TReviews[]) => {
+  if (!reviews.length) return 0;
+  const totalRating = reviews.reduce((sum, review) => sum + review.rate, 0);
+  return parseFloat((totalRating / reviews.length).toFixed(1));
+};
+
+Trails.forEach((trail) => {
+  trail.rating = averageRating(trail.reviews);
+});
 
 export default Trails;

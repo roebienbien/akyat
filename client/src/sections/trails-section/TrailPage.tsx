@@ -8,6 +8,8 @@ import StarRating from '../../components/StarRating';
 import PrimaryButton from '../../components/ui/buttons/PrimaryButton';
 import { useTrailsContext } from './TrailsContext';
 import UnsplashImage from '../../components/ui/UnsplashImage';
+import { dividerClasses } from '@mui/material';
+import { BsDot } from 'react-icons/bs';
 
 const convertToHoursAndMinutes = (minutes: number) => {
   const hours = Math.floor(minutes / 60);
@@ -45,7 +47,7 @@ export default function TrailPage() {
 
   if (!trail) return <div className="text-red-500">Error: Trail Not Found</div>;
 
-  const { name, price, hostImage, photoId, imgAlt, photos, location, elevation, duration, length, trailType, difficulty, rating, relevancy } = trail;
+  const { name, price, hostImage, photoId, imgAlt, photos, location, elevation, duration, length, trailType, difficulty, rating, reviews } = trail;
   const formattedDuration = convertToHoursAndMinutes(duration);
 
   const TrailInfo = [
@@ -179,9 +181,42 @@ export default function TrailPage() {
             </form>
           </div>
         </div>
-        <div id="reviews" className="h-screen bg-red-100 text-4xl">
-          Reviews
+        {/* Reviews */}
+        <div id="reviews" className="h-[700px]">
+          <div className="flex gap-x-2">
+            <div className="flex items-center gap-x-2 text-xl">
+              <span>{rating}</span>
+              <StarRating value={rating} />
+            </div>
+            <span className="text-lg">| {reviews?.length} reviews</span>
+          </div>
+          {reviews ? (
+            <div className="grid grid-cols-2 gap-8">
+              {reviews.map((review, index) => (
+                <div key={index} className="flex flex-col">
+                  <div className="flex items-center gap-x-2">
+                    <div className="h-12 w-12 overflow-hidden rounded-full">
+                      <UnsplashImage photoId={review.img} alt={'reviewer-avatar'} />
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="text-base">{review.userName}</span>
+                      <span className="text-sm text-gray-600">{review.registeredAt} years on Akyat</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center">
+                    <StarRating value={review.rate} size="small" />
+                    <BsDot />
+                    <span>{review.ratedDate}</span>
+                  </div>
+                  <p>{review.comment}</p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div>No reviews yet</div>
+          )}
         </div>
+        
         <div>
           <span className="lg:text-4xl">Related Trails</span>
         </div>
