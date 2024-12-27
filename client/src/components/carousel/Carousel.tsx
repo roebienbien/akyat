@@ -41,6 +41,7 @@ const filterByRelevancy = (trails: ITrails[], relevancy: filterType) => {
     trailType: 'N/A',
     difficulty: 'N/A',
     rating: 0,
+    reviews: [{ userName: '', img: '1502085671122-2d218cd434e6', comment: 'hozier', rate: 2, ratedDate: 'dec25', registeredAt: 4 }],
     description: 'Loremloremloremlorem',
     relevancy: relevancy,
   };
@@ -50,7 +51,7 @@ const filterByRelevancy = (trails: ITrails[], relevancy: filterType) => {
   return filteredTrails;
 };
 
-export function Carousel() {
+export function Carousel({ hasFilter = true }: { hasFilter: boolean }) {
   const slidesToScroll = useSlidesToScroll();
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
@@ -84,15 +85,16 @@ export function Carousel() {
   return (
     <div>
       <div className="mb-2 flex">
-        {FilterButtons.map((button, index) => (
-          <button
-            key={index}
-            onClick={() => setSelectedRelevancy(button.filter)}
-            className={`${selectedRelevancy === button.filter && 'bg-gray-700 text-white hover:bg-gray-700'} mb-2 w-20 border border-gray-300 p-2 text-sm font-semibold hover:bg-gray-200`}
-          >
-            {button.name}
-          </button>
-        ))}
+        {hasFilter &&
+          FilterButtons.map((button, index) => (
+            <button
+              key={index}
+              onClick={() => setSelectedRelevancy(button.filter)}
+              className={`${selectedRelevancy === button.filter && 'bg-gray-700 text-white hover:bg-gray-700'} mb-2 w-20 border border-gray-300 p-2 text-sm font-semibold hover:bg-gray-200`}
+            >
+              {button.name}
+            </button>
+          ))}
       </div>
       <div className="relative mx-auto w-11/12 md:w-full">
         <div ref={emblaRef} className="overflow-hidden">

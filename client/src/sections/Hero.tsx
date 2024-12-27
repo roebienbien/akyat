@@ -2,6 +2,9 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { useCallback, useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
 import UnsplashImage from '../components/ui/UnsplashImage';
+import PrimaryButton from '../components/ui/buttons/PrimaryButton';
+import SecondaryButton from '../components/ui/buttons/SecondaryButton';
+import { Link } from 'react-router-dom';
 
 const womanPreg = '1591002680506-8aa78346c040';
 const groupHikers = '1464198016405-33fd4527b89d';
@@ -15,7 +18,7 @@ export default function Hero() {
 
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
 
-  const totalScroll = 2;
+  const totalScroll = 1; // == carouselArray.length
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleScroll = useCallback(
@@ -38,17 +41,55 @@ export default function Hero() {
         <div ref={emblaRef} className="overflow-hidden">
           <div className="flex h-[500px]">
             {/* Slides */}
-            <div className="w-full min-w-0 flex-none">
+            {/* First Slide */}
+            <div className="relative w-full min-w-0 flex-none">
+              <div className="absolute left-32 top-1/2 z-10 flex h-[280px] w-[480px] -translate-y-1/2 items-center justify-center bg-gray-100 shadow-2xl">
+                <div className="flex flex-col items-center justify-center gap-y-4 p-4 text-center">
+                  <span className="text-3xl font-bold">Explore the mountains of the Philippines</span>
+                  <p className="lg:max-w-sm">
+                    Discover the stunning mountains of the Philippines and discover unforgettable adventures.
+                    <br /> Start your journey today!
+                  </p>
+                  <div className="flex justify-between gap-x-4">
+                    <Link to={'/trails'} className="w-40 rounded bg-green-600 p-4 text-sm font-bold text-white hover:bg-green-700">
+                      Book now
+                    </Link>
+                    <Link to={'/trails'} className="w-40 rounded border border-green-600 p-4 text-sm font-bold text-green-600 hover:border-green-700">
+                      Browse trails
+                    </Link>
+                  </div>
+                </div>
+              </div>
               <UnsplashImage photoId={groupHikers} alt={'hero-image'} />
             </div>
-            <div className="w-full min-w-0 flex-none">
+
+            {/* Second Slide */}
+            {/* <div className="relative w-full min-w-0 flex-none">
+              <div className="absolute left-32 top-1/2 z-10 flex h-60 w-96 -translate-y-1/2 items-center justify-center bg-gray-100">
+                <span>Hike with Friends</span>
+              </div>
               <UnsplashImage photoId={womanPreg} alt={'hero-image'} />
-            </div>
-            <div className="w-full min-w-0 flex-none">
+            </div> */}
+
+            {/* Third Slide */}
+            <div className="relative w-full min-w-0 flex-none">
+              <div className="absolute right-32 top-1/2 z-10 flex h-[300px] w-[400px] -translate-y-1/2 items-center justify-center bg-gray-100 px-4">
+                <div className="flex flex-col items-center justify-center gap-y-4 p-4 text-center">
+                  <span className="text-3xl font-bold">Lead the way</span>
+                  <p className="lg:max-w-sm">
+                    Become a hike coordinator today and inspire adventurers to explore nature, discover hidden trails, and create lasting memories.
+                  </p>
+                  <Link to="host" className="w-full rounded bg-green-600 p-4 text-white hover:bg-green-700">
+                    Join as a guide
+                  </Link>
+                </div>
+              </div>
               <UnsplashImage photoId={oldMan} alt={'hero-image'} />
             </div>
           </div>
         </div>
+
+        {/* Arrow button */}
         <div className="absolute top-1/2 z-50 flex w-full -translate-y-1/2 justify-between">
           <button
             onClick={() => handleScroll('prev')}

@@ -1,4 +1,4 @@
-import { twMerge } from "tailwind-merge";
+import { twMerge } from 'tailwind-merge';
 interface IProps {
   className?: string;
   text: string;
@@ -10,10 +10,7 @@ const SecondaryButton = ({ className, text, disabled, onClick }: IProps) => {
     <button
       onClick={onClick}
       disabled={disabled}
-      className={twMerge(
-        "w-fit rounded border border-blue-400 px-4 py-4 text-blue-400 disabled:opacity-75",
-        className,
-      )}
+      className={twMerge('w-fit rounded border border-green-700 px-4 py-4 text-green-700 disabled:opacity-75', className)}
     >
       {text}
     </button>

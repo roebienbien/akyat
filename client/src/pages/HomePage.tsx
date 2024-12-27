@@ -6,15 +6,17 @@ import Hero from '../sections/Hero';
 import Perks from '../sections/perks-section/Perks';
 import Testimonials from '../sections/testimonials/Testimonials';
 import Trails from '../sections/trails-section/Trails';
+import Trails2 from '../sections/trails-section/Trails2';
 
 const HomePageSections = [
   // ScrollToTop, //scroll to top of page on page change
   Hero,
   Trails,
   Perks,
+  Trails2,
+  AkyatStatistics,
   AppPromotion,
   Testimonials,
-  AkyatStatistics,
   FAQSection,
 ];
 
