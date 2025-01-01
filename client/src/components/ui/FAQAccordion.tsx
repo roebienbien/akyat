@@ -34,22 +34,4 @@ function FAQAccordion({ isOpen, onToggle, question, answer }: Props) {
   );
 }
 
-// function FAQAccordion({ isOpen, onToggle, question, answer }: Props) {
-//   return (
-//     <div className='flex max-w-4xl flex-col  border border-gray-400'>
-//       <button onClick={onToggle} className='flex w-full items-center justify-between p-4 text-xs'>
-//         <span className='text-xl'>{question}</span>
-//         <span className={`transform text-lg transition-transform   ${isOpen ? 'rotate-45' : 'rotate-0'}`}>
-//           <FaPlus />
-//         </span>
-//       </button>
-//       <div className={`${isOpen ? 'mb-4 grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'} grid overflow-hidden px-4  transition-all duration-300 ease-in-out`}>
-//         <div className='flex flex-col overflow-hidden'>
-//           <span>{answer}</span>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
 export default FAQAccordion;

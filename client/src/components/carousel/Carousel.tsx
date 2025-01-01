@@ -51,7 +51,7 @@ const filterByRelevancy = (trails: ITrails[], relevancy: filterType) => {
   return filteredTrails;
 };
 
-export function Carousel({ hasFilter = true }: { hasFilter: boolean }) {
+export function Carousel({ hasFilter = true }: { hasFilter?: boolean }) {
   const slidesToScroll = useSlidesToScroll();
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
